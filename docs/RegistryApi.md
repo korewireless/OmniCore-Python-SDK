@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_registry**
-> DeviceRegistry create_registry(subscription_id, registry)
+> CreateRegistry200Response create_registry(subscription_id, registry=registry)
 
 
 
@@ -49,10 +49,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
-    registry = OmniCore.NewRegistry() # NewRegistry | application/json
+    registry = OmniCore.CreateRegistryRequest() # CreateRegistryRequest | application/json (optional)
 
     try:
-        api_response = api_instance.create_registry(subscription_id, registry)
+        api_response = api_instance.create_registry(subscription_id, registry=registry)
         print("The response of RegistryApi->create_registry:\n")
         pprint(api_response)
     except Exception as e:
@@ -64,11 +64,11 @@ with OmniCore.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
- **registry** | [**NewRegistry**](NewRegistry.md)| application/json | 
+ **registry** | [**CreateRegistryRequest**](CreateRegistryRequest.md)| application/json | [optional] 
 
 ### Return type
 
-[**DeviceRegistry**](DeviceRegistry.md)
+[**CreateRegistry200Response**](CreateRegistry200Response.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_registries**
-> ListDeviceRegistriesResponse get_registries(subscription_id, page_number=page_number, page_size=page_size)
+> ListDeviceRegistries get_registries(subscription_id, page_number=page_number, page_size=page_size)
 
 
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListDeviceRegistriesResponse**](ListDeviceRegistriesResponse.md)
+[**ListDeviceRegistries**](ListDeviceRegistries.md)
 
 ### Authorization
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_registry**
-> DeviceRegistry update_registry(subscription_id, registry_id, update_mask, registry)
+> CreateRegistry200Response update_registry(subscription_id, registry_id, update_mask, registry=registry)
 
 
 
@@ -365,10 +365,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     update_mask = 'update_mask_example' # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
-    registry = OmniCore.UpdateRegistry() # UpdateRegistry | application/json
+    registry = OmniCore.UpdateRegistryRequest() # UpdateRegistryRequest | application/json (optional)
 
     try:
-        api_response = api_instance.update_registry(subscription_id, registry_id, update_mask, registry)
+        api_response = api_instance.update_registry(subscription_id, registry_id, update_mask, registry=registry)
         print("The response of RegistryApi->update_registry:\n")
         pprint(api_response)
     except Exception as e:
@@ -382,11 +382,11 @@ Name | Type | Description  | Notes
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **update_mask** | **str**| values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials | 
- **registry** | [**UpdateRegistry**](UpdateRegistry.md)| application/json | 
+ **registry** | [**UpdateRegistryRequest**](UpdateRegistryRequest.md)| application/json | [optional] 
 
 ### Return type
 
-[**DeviceRegistry**](DeviceRegistry.md)
+[**CreateRegistry200Response**](CreateRegistry200Response.md)
 
 ### Authorization
 

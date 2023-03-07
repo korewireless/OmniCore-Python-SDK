@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import OmniCore
-from OmniCore.models.list_device_registries_response import ListDeviceRegistriesResponse  # noqa: E501
+from OmniCore.models.list_device_registries import ListDeviceRegistries  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestListDeviceRegistriesResponse(unittest.TestCase):
-    """ListDeviceRegistriesResponse unit test stubs"""
+class TestListDeviceRegistries(unittest.TestCase):
+    """ListDeviceRegistries unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,15 +30,15 @@ class TestListDeviceRegistriesResponse(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test ListDeviceRegistriesResponse
+        """Test ListDeviceRegistries
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ListDeviceRegistriesResponse`
+        # uncomment below to create an instance of `ListDeviceRegistries`
         """
-        model = OmniCore.models.list_device_registries_response.ListDeviceRegistriesResponse()  # noqa: E501
+        model = OmniCore.models.list_device_registries.ListDeviceRegistries()  # noqa: E501
         if include_optional :
-            return ListDeviceRegistriesResponse(
+            return ListDeviceRegistries(
                 device_registries = [
                     OmniCore.models.device_registry.DeviceRegistry(
                         id = '012', 
@@ -81,7 +81,7 @@ class TestListDeviceRegistriesResponse(unittest.TestCase):
                 total_count = 56
             )
         else :
-            return ListDeviceRegistriesResponse(
+            return ListDeviceRegistries(
                 device_registries = [
                     OmniCore.models.device_registry.DeviceRegistry(
                         id = '012', 
@@ -122,8 +122,8 @@ class TestListDeviceRegistriesResponse(unittest.TestCase):
         )
         """
 
-    def testListDeviceRegistriesResponse(self):
-        """Test ListDeviceRegistriesResponse"""
+    def testListDeviceRegistries(self):
+        """Test ListDeviceRegistries"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
