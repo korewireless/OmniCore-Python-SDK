@@ -14,6 +14,7 @@ OmniCore/models/__init__.py
 OmniCore/models/bind_request.py
 OmniCore/models/bind_request_ids_gateway.py
 OmniCore/models/block_communication_body.py
+OmniCore/models/create_new_device.py
 OmniCore/models/device.py
 OmniCore/models/device_certificate.py
 OmniCore/models/device_command.py
@@ -35,7 +36,6 @@ OmniCore/models/list_device_states_response.py
 OmniCore/models/list_devices_response.py
 OmniCore/models/log_level.py
 OmniCore/models/mqtt_config.py
-OmniCore/models/new_device.py
 OmniCore/models/new_registry.py
 OmniCore/models/notification_config.py
 OmniCore/models/public_key_certificate.py
@@ -50,6 +50,7 @@ README.md
 docs/BindRequest.md
 docs/BindRequestIdsGateway.md
 docs/BlockCommunicationBody.md
+docs/CreateNewDevice.md
 docs/Device.md
 docs/DeviceApi.md
 docs/DeviceCertificate.md
@@ -72,7 +73,6 @@ docs/ListDeviceStatesResponse.md
 docs/ListDevicesResponse.md
 docs/LogLevel.md
 docs/MqttConfig.md
-docs/NewDevice.md
 docs/NewRegistry.md
 docs/NotificationConfig.md
 docs/PublicKeyCertificate.md
@@ -92,6 +92,7 @@ test/__init__.py
 test/test_bind_request.py
 test/test_bind_request_ids_gateway.py
 test/test_block_communication_body.py
+test/test_create_new_device.py
 test/test_device.py
 test/test_device_api.py
 test/test_device_certificate.py
@@ -114,7 +115,6 @@ test/test_list_device_states_response.py
 test/test_list_devices_response.py
 test/test_log_level.py
 test/test_mqtt_config.py
-test/test_new_device.py
 test/test_new_registry.py
 test/test_notification_config.py
 test/test_public_key_certificate.py

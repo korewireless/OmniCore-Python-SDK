@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import OmniCore
-from OmniCore.models.new_device import NewDevice  # noqa: E501
+from OmniCore.models.create_new_device import CreateNewDevice  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestNewDevice(unittest.TestCase):
-    """NewDevice unit test stubs"""
+class TestCreateNewDevice(unittest.TestCase):
+    """CreateNewDevice unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,15 +30,15 @@ class TestNewDevice(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test NewDevice
+        """Test CreateNewDevice
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `NewDevice`
+        # uncomment below to create an instance of `CreateNewDevice`
         """
-        model = OmniCore.models.new_device.NewDevice()  # noqa: E501
+        model = OmniCore.models.create_new_device.CreateNewDevice()  # noqa: E501
         if include_optional :
-            return NewDevice(
+            return CreateNewDevice(
                 id = '012', 
                 blocked = True, 
                 credentials = [
@@ -63,13 +63,13 @@ class TestNewDevice(unittest.TestCase):
                     }
             )
         else :
-            return NewDevice(
+            return CreateNewDevice(
                 id = '012',
         )
         """
 
-    def testNewDevice(self):
-        """Test NewDevice"""
+    def testCreateNewDevice(self):
+        """Test CreateNewDevice"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

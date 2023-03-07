@@ -18,6 +18,7 @@ from __future__ import absolute_import
 from OmniCore.models.bind_request import BindRequest
 from OmniCore.models.bind_request_ids_gateway import BindRequestIdsGateway
 from OmniCore.models.block_communication_body import BlockCommunicationBody
+from OmniCore.models.create_new_device import CreateNewDevice
 from OmniCore.models.device import Device
 from OmniCore.models.device_certificate import DeviceCertificate
 from OmniCore.models.device_command import DeviceCommand
@@ -39,7 +40,6 @@ from OmniCore.models.list_device_states_response import ListDeviceStatesResponse
 from OmniCore.models.list_devices_response import ListDevicesResponse
 from OmniCore.models.log_level import LogLevel
 from OmniCore.models.mqtt_config import MqttConfig
-from OmniCore.models.new_device import NewDevice
 from OmniCore.models.new_registry import NewRegistry
 from OmniCore.models.notification_config import NotificationConfig
 from OmniCore.models.public_key_certificate import PublicKeyCertificate
