@@ -87,17 +87,11 @@ class TestDevice(unittest.TestCase):
                     version = 56, ), 
                 state = OmniCore.models.device_state.DeviceState(
                     binary_data = '', 
-                    update_time = '', ), 
-                subscriptions = [
-                    ''
-                    ]
+                    update_time = '', )
             )
         else :
             return Device(
                 id = '012',
-                parent = '',
-                registry = '',
-                subscription = '',
         )
         """
 

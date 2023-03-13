@@ -22,12 +22,9 @@ from pydantic import Field, StrictInt, StrictStr
 
 from typing import Optional
 
-from OmniCore.models.create_registry200_response import CreateRegistry200Response
-from OmniCore.models.create_registry_request import CreateRegistryRequest
 from OmniCore.models.device_registry import DeviceRegistry
 from OmniCore.models.info import Info
 from OmniCore.models.list_device_registries import ListDeviceRegistries
-from OmniCore.models.update_registry_request import UpdateRegistryRequest
 
 from OmniCore.api_client import ApiClient
 from OmniCore.exceptions import (  # noqa: F401
@@ -49,7 +46,7 @@ class RegistryApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def create_registry(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry : Annotated[Optional[CreateRegistryRequest], Field(description="application/json")] = None, **kwargs) -> CreateRegistry200Response:  # noqa: E501
+    def create_registry(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs) -> DeviceRegistry:  # noqa: E501
         """create_registry  # noqa: E501
 
         Create a registry  # noqa: E501
@@ -62,7 +59,7 @@ class RegistryApi(object):
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry: application/json
-        :type registry: CreateRegistryRequest
+        :type registry: DeviceRegistry
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -76,13 +73,13 @@ class RegistryApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: CreateRegistry200Response
+        :rtype: DeviceRegistry
         """
         kwargs['_return_http_data_only'] = True
         return self.create_registry_with_http_info(subscription_id, registry, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_registry_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry : Annotated[Optional[CreateRegistryRequest], Field(description="application/json")] = None, **kwargs):  # noqa: E501
+    def create_registry_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs):  # noqa: E501
         """create_registry  # noqa: E501
 
         Create a registry  # noqa: E501
@@ -95,7 +92,7 @@ class RegistryApi(object):
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry: application/json
-        :type registry: CreateRegistryRequest
+        :type registry: DeviceRegistry
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -117,7 +114,7 @@ class RegistryApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(CreateRegistry200Response, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(DeviceRegistry, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -185,7 +182,7 @@ class RegistryApi(object):
         _auth_settings = ['bearerAuth']  # noqa: E501
 
         _response_types_map = {
-            '200': "CreateRegistry200Response",
+            '200': "DeviceRegistry",
             '400': "GenericErrorResponse",
             '404': "GenericErrorResponse",
             '500': "GenericErrorResponse",
@@ -675,7 +672,7 @@ class RegistryApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_registry(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials")], registry : Annotated[Optional[UpdateRegistryRequest], Field(description="application/json")] = None, **kwargs) -> CreateRegistry200Response:  # noqa: E501
+    def update_registry(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs) -> DeviceRegistry:  # noqa: E501
         """update_registry  # noqa: E501
 
         Update a registry  # noqa: E501
@@ -692,7 +689,7 @@ class RegistryApi(object):
         :param update_mask: values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials (required)
         :type update_mask: str
         :param registry: application/json
-        :type registry: UpdateRegistryRequest
+        :type registry: DeviceRegistry
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -706,13 +703,13 @@ class RegistryApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: CreateRegistry200Response
+        :rtype: DeviceRegistry
         """
         kwargs['_return_http_data_only'] = True
         return self.update_registry_with_http_info(subscription_id, registry_id, update_mask, registry, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_registry_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials")], registry : Annotated[Optional[UpdateRegistryRequest], Field(description="application/json")] = None, **kwargs):  # noqa: E501
+    def update_registry_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs):  # noqa: E501
         """update_registry  # noqa: E501
 
         Update a registry  # noqa: E501
@@ -729,7 +726,7 @@ class RegistryApi(object):
         :param update_mask: values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials (required)
         :type update_mask: str
         :param registry: application/json
-        :type registry: UpdateRegistryRequest
+        :type registry: DeviceRegistry
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -751,7 +748,7 @@ class RegistryApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(CreateRegistry200Response, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(DeviceRegistry, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -825,7 +822,7 @@ class RegistryApi(object):
         _auth_settings = ['bearerAuth']  # noqa: E501
 
         _response_types_map = {
-            '200': "CreateRegistry200Response",
+            '200': "DeviceRegistry",
             '400': "GenericErrorResponse",
             '404': "GenericErrorResponse",
             '500': "GenericErrorResponse",

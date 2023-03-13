@@ -35,7 +35,7 @@ class DeviceRegistry(BaseModel):
     """
     id: constr(strict=True, max_length=256, min_length=3) = ...
     name: Optional[StrictStr] = None
-    parent: StrictStr = ...
+    parent: Optional[StrictStr] = None
     created_on: Optional[StrictStr] = Field(None, alias="createdOn")
     updated_on: Optional[StrictStr] = Field(None, alias="updatedOn")
     credentials: Optional[List[RegistryCredential]] = None
@@ -70,6 +70,12 @@ class DeviceRegistry(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "name",
+                            "parent",
+                            "created_on",
+                            "updated_on",
+                            "number_of_devices",
+                            "number_of_gateways",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of each item in credentials (list)

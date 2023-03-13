@@ -36,11 +36,11 @@ class Device(BaseModel):
     id: constr(strict=True, max_length=256, min_length=3) = ...
     name: Optional[StrictStr] = None
     num_id: Optional[StrictStr] = Field(None, alias="numId")
-    parent: StrictStr = ...
-    registry: StrictStr = ...
+    parent: Optional[StrictStr] = None
+    registry: Optional[StrictStr] = None
     blocked: Optional[StrictBool] = None
     capresent: Optional[StrictBool] = None
-    subscription: StrictStr = ...
+    subscription: Optional[StrictStr] = None
     created_on: Optional[StrictStr] = Field(None, alias="createdOn")
     updated_on: Optional[StrictStr] = Field(None, alias="updatedOn")
     credentials: Optional[List[DeviceCredential]] = None
@@ -60,8 +60,7 @@ class Device(BaseModel):
     metadata: Optional[Dict[str, StrictStr]] = None
     config: Optional[DeviceConfig] = None
     state: Optional[DeviceState] = None
-    subscriptions: Optional[List[StrictStr]] = None
-    __properties = ["id", "name", "numId", "parent", "registry", "blocked", "capresent", "subscription", "createdOn", "updatedOn", "credentials", "gateway", "gatewayConfig", "isGateway", "deviceErrors", "clientOnline", "lastConfigAckTime", "lastConfigSendTime", "lastErrorStatus", "lastErrorTime", "lastEventTime", "lastHeartbeatTime", "lastStateTime", "logLevel", "metadata", "config", "state", "subscriptions"]
+    __properties = ["id", "name", "numId", "parent", "registry", "blocked", "capresent", "subscription", "createdOn", "updatedOn", "credentials", "gateway", "gatewayConfig", "isGateway", "deviceErrors", "clientOnline", "lastConfigAckTime", "lastConfigSendTime", "lastErrorStatus", "lastErrorTime", "lastEventTime", "lastHeartbeatTime", "lastStateTime", "logLevel", "metadata", "config", "state"]
 
     class Config:
         allow_population_by_field_name = True
@@ -84,6 +83,22 @@ class Device(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "name",
+                            "num_id",
+                            "parent",
+                            "registry",
+                            "capresent",
+                            "subscription",
+                            "created_on",
+                            "updated_on",
+                            "device_errors",
+                            "client_online",
+                            "last_config_ack_time",
+                            "last_config_send_time",
+                            "last_error_time",
+                            "last_event_time",
+                            "last_heartbeat_time",
+                            "last_state_time",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of each item in credentials (list)
@@ -143,8 +158,7 @@ class Device(BaseModel):
             "log_level": obj.get("logLevel"),
             "metadata": obj.get("metadata"),
             "config": DeviceConfig.from_dict(obj.get("config")) if obj.get("config") is not None else None,
-            "state": DeviceState.from_dict(obj.get("state")) if obj.get("state") is not None else None,
-            "subscriptions": obj.get("subscriptions")
+            "state": DeviceState.from_dict(obj.get("state")) if obj.get("state") is not None else None
         })
         return _obj
 

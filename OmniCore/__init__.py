@@ -34,9 +34,6 @@ from OmniCore.exceptions import ApiException
 from OmniCore.models.bind_request import BindRequest
 from OmniCore.models.bind_request_ids_gateway import BindRequestIdsGateway
 from OmniCore.models.block_communication_body import BlockCommunicationBody
-from OmniCore.models.create_new_device import CreateNewDevice
-from OmniCore.models.create_registry200_response import CreateRegistry200Response
-from OmniCore.models.create_registry_request import CreateRegistryRequest
 from OmniCore.models.device import Device
 from OmniCore.models.device_certificate import DeviceCertificate
 from OmniCore.models.device_command import DeviceCommand
@@ -58,13 +55,9 @@ from OmniCore.models.list_device_states_response import ListDeviceStatesResponse
 from OmniCore.models.list_devices_response import ListDevicesResponse
 from OmniCore.models.log_level import LogLevel
 from OmniCore.models.mqtt_config import MqttConfig
-from OmniCore.models.new_registry import NewRegistry
 from OmniCore.models.notification_config import NotificationConfig
 from OmniCore.models.public_key_certificate import PublicKeyCertificate
 from OmniCore.models.public_key_credential import PublicKeyCredential
 from OmniCore.models.registry_certificate import RegistryCertificate
 from OmniCore.models.registry_credential import RegistryCredential
-from OmniCore.models.update_device import UpdateDevice
-from OmniCore.models.update_registry import UpdateRegistry
-from OmniCore.models.update_registry_request import UpdateRegistryRequest
 from OmniCore.models.x509_certificate_details import X509CertificateDetails

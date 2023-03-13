@@ -89,10 +89,7 @@ class TestListDevicesResponse(unittest.TestCase):
                             version = 56, ), 
                         state = OmniCore.models.device_state.DeviceState(
                             binary_data = '', 
-                            update_time = '', ), 
-                        subscriptions = [
-                            ''
-                            ], )
+                            update_time = '', ), )
                     ], 
                 page_number = 56, 
                 page_size = 56, 
@@ -150,10 +147,7 @@ class TestListDevicesResponse(unittest.TestCase):
                             version = 56, ), 
                         state = OmniCore.models.device_state.DeviceState(
                             binary_data = '', 
-                            update_time = '', ), 
-                        subscriptions = [
-                            ''
-                            ], )
+                            update_time = '', ), )
                     ],
         )
         """

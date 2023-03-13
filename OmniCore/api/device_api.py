@@ -25,7 +25,6 @@ from typing import Any, Dict, List, Optional
 from OmniCore.models.bind_request import BindRequest
 from OmniCore.models.bind_request_ids_gateway import BindRequestIdsGateway
 from OmniCore.models.block_communication_body import BlockCommunicationBody
-from OmniCore.models.create_new_device import CreateNewDevice
 from OmniCore.models.device import Device
 from OmniCore.models.device_command import DeviceCommand
 from OmniCore.models.device_config import DeviceConfig
@@ -34,7 +33,6 @@ from OmniCore.models.info import Info
 from OmniCore.models.list_device_config_versions_response import ListDeviceConfigVersionsResponse
 from OmniCore.models.list_device_states_response import ListDeviceStatesResponse
 from OmniCore.models.list_devices_response import ListDevicesResponse
-from OmniCore.models.update_device import UpdateDevice
 
 from OmniCore.api_client import ApiClient
 from OmniCore.exceptions import (  # noqa: F401
@@ -564,7 +562,7 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def create_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[CreateNewDevice, Field(..., description="application/json")], **kwargs) -> Device:  # noqa: E501
+    def create_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[Device, Field(..., description="application/json")], **kwargs) -> Device:  # noqa: E501
         """create_device  # noqa: E501
 
         Create a device under a registry  # noqa: E501
@@ -579,7 +577,7 @@ class DeviceApi(object):
         :param registry_id: Registry ID (required)
         :type registry_id: str
         :param device: application/json (required)
-        :type device: CreateNewDevice
+        :type device: Device
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -599,7 +597,7 @@ class DeviceApi(object):
         return self.create_device_with_http_info(subscription_id, registry_id, device, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[CreateNewDevice, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def create_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[Device, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """create_device  # noqa: E501
 
         Create a device under a registry  # noqa: E501
@@ -614,7 +612,7 @@ class DeviceApi(object):
         :param registry_id: Registry ID (required)
         :type registry_id: str
         :param device: application/json (required)
-        :type device: CreateNewDevice
+        :type device: Device
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -2278,7 +2276,7 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], update_mask : Annotated[StrictStr, Field(..., description="Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata")], device : Annotated[UpdateDevice, Field(..., description="application/json")], **kwargs) -> Device:  # noqa: E501
+    def update_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], update_mask : Annotated[StrictStr, Field(..., description="Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata")], device : Annotated[Device, Field(..., description="application/json")], **kwargs) -> Device:  # noqa: E501
         """update_device  # noqa: E501
 
         Modify device under a registry  # noqa: E501
@@ -2294,10 +2292,10 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param update_mask: Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata (required)
+        :param update_mask: Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata (required)
         :type update_mask: str
         :param device: application/json (required)
-        :type device: UpdateDevice
+        :type device: Device
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2317,7 +2315,7 @@ class DeviceApi(object):
         return self.update_device_with_http_info(subscription_id, registry_id, device_id, update_mask, device, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], update_mask : Annotated[StrictStr, Field(..., description="Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata")], device : Annotated[UpdateDevice, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def update_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], update_mask : Annotated[StrictStr, Field(..., description="Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata")], device : Annotated[Device, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """update_device  # noqa: E501
 
         Modify device under a registry  # noqa: E501
@@ -2333,10 +2331,10 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param update_mask: Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata (required)
+        :param update_mask: Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata (required)
         :type update_mask: str
         :param device: application/json (required)
-        :type device: UpdateDevice
+        :type device: Device
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code

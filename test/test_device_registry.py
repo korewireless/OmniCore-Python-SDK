@@ -77,7 +77,6 @@ class TestDeviceRegistry(unittest.TestCase):
         else :
             return DeviceRegistry(
                 id = '012',
-                parent = '',
         )
         """
 
