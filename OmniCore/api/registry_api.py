@@ -179,7 +179,7 @@ class RegistryApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "DeviceRegistry",
@@ -332,7 +332,7 @@ class RegistryApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Info",
@@ -492,7 +492,7 @@ class RegistryApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "ListDeviceRegistries",
@@ -645,7 +645,7 @@ class RegistryApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "DeviceRegistry",
@@ -819,7 +819,7 @@ class RegistryApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "DeviceRegistry",

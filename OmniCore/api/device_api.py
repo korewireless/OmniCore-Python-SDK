@@ -194,7 +194,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Info",
@@ -361,7 +361,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Info",
@@ -535,7 +535,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "object",
@@ -702,7 +702,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Device",
@@ -862,7 +862,7 @@ class DeviceApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Info",
@@ -1029,7 +1029,7 @@ class DeviceApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "ListDeviceConfigVersionsResponse",
@@ -1189,7 +1189,7 @@ class DeviceApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Device",
@@ -1400,7 +1400,7 @@ class DeviceApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "ListDevicesResponse",
@@ -1567,7 +1567,7 @@ class DeviceApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "ListDeviceStatesResponse",
@@ -1741,7 +1741,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "object",
@@ -1908,7 +1908,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Info",
@@ -2075,7 +2075,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Info",
@@ -2249,7 +2249,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "DeviceConfig",
@@ -2430,7 +2430,7 @@ class DeviceApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['bearerAuth']  # noqa: E501
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
             '200': "Device",
