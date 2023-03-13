@@ -189,7 +189,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/registries', 'POST',
+            '/model-state-management/subscriptions/{subscriptionId}/registries', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -342,7 +342,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/registries/{registryId}', 'DELETE',
+            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}', 'DELETE',
             _path_params,
             _query_params,
             _header_params,
@@ -502,7 +502,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/registries', 'GET',
+            '/model-state-management/subscriptions/{subscriptionId}/registries', 'GET',
             _path_params,
             _query_params,
             _header_params,
@@ -655,7 +655,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/registries/{registryId}', 'GET',
+            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}', 'GET',
             _path_params,
             _query_params,
             _header_params,
@@ -829,7 +829,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/registries/{registryId}', 'PATCH',
+            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}', 'PATCH',
             _path_params,
             _query_params,
             _header_params,

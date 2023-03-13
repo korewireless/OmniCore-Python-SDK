@@ -19,7 +19,6 @@ from OmniCore.models.bind_request import BindRequest
 from OmniCore.models.bind_request_ids_gateway import BindRequestIdsGateway
 from OmniCore.models.block_communication_body import BlockCommunicationBody
 from OmniCore.models.device import Device
-from OmniCore.models.device_certificate import DeviceCertificate
 from OmniCore.models.device_command import DeviceCommand
 from OmniCore.models.device_config import DeviceConfig
 from OmniCore.models.device_configuration import DeviceConfiguration
@@ -42,6 +41,5 @@ from OmniCore.models.mqtt_config import MqttConfig
 from OmniCore.models.notification_config import NotificationConfig
 from OmniCore.models.public_key_certificate import PublicKeyCertificate
 from OmniCore.models.public_key_credential import PublicKeyCredential
-from OmniCore.models.registry_certificate import RegistryCertificate
 from OmniCore.models.registry_credential import RegistryCredential
 from OmniCore.models.x509_certificate_details import X509CertificateDetails

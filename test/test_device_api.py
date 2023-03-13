@@ -89,6 +89,12 @@ class TestDeviceApi(unittest.TestCase):
         """
         pass
 
+    def test_send_configuration_to_device(self):
+        """Test case for send_configuration_to_device
+
+        """
+        pass
+
     def test_un_bind_device(self):
         """Test case for un_bind_device
 
@@ -97,12 +103,6 @@ class TestDeviceApi(unittest.TestCase):
 
     def test_un_bind_devices(self):
         """Test case for un_bind_devices
-
-        """
-        pass
-
-    def test_update_configuration_to_device(self):
-        """Test case for update_configuration_to_device
 
         """
         pass
