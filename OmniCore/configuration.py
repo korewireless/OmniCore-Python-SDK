@@ -92,7 +92,7 @@ conf = OmniCore.Configuration(
                  ):
         """Constructor
         """
-        self._base_path = "https://demo-api.omnicore.cloud.korewireless.com" if host is None else host
+        self._base_path = "https://api.omnicore.korewireless.com" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -408,8 +408,12 @@ conf = OmniCore.Configuration(
         """
         return [
             {
+                'url': "https://api.omnicore.korewireless.com",
+                'description': "Production Server",
+            },
+            {
                 'url': "https://demo-api.omnicore.cloud.korewireless.com",
-                'description': "No description provided",
+                'description': "Demo Server",
             }
         ]
 
