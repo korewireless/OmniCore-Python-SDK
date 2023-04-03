@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_config**
-> ListDeviceConfigVersionsResponse get_config(subscriptionid, registry_id, device_id, num_versions)
+> ListDeviceConfigVersionsResponse get_config(subscriptionid, registry_id, device_id, num_versions=num_versions)
 
 
 
@@ -729,10 +729,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    num_versions = 56 # int | Device ID
+    num_versions = 56 # int | The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)
 
     try:
-        api_response = api_instance.get_config(subscriptionid, registry_id, device_id, num_versions)
+        api_response = api_instance.get_config(subscriptionid, registry_id, device_id, num_versions=num_versions)
         print("The response of DeviceApi->get_config:\n")
         pprint(api_response)
     except Exception as e:
@@ -776,10 +776,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    num_versions = 56 # int | Device ID
+    num_versions = 56 # int | The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)
 
     try:
-        api_response = api_instance.get_config(subscriptionid, registry_id, device_id, num_versions)
+        api_response = api_instance.get_config(subscriptionid, registry_id, device_id, num_versions=num_versions)
         print("The response of DeviceApi->get_config:\n")
         pprint(api_response)
     except Exception as e:
@@ -793,7 +793,7 @@ Name | Type | Description  | Notes
  **subscriptionid** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
- **num_versions** | **int**| Device ID | 
+ **num_versions** | **int**| The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. | [optional] 
 
 ### Return type
 
@@ -1818,7 +1818,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    update_mask = 'update_mask_example' # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
+    update_mask = 'update_mask_example' # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata
     device = OmniCore.Device() # Device | application/json
 
     try:
@@ -1866,7 +1866,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    update_mask = 'update_mask_example' # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
+    update_mask = 'update_mask_example' # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata
     device = OmniCore.Device() # Device | application/json
 
     try:
@@ -1884,7 +1884,7 @@ Name | Type | Description  | Notes
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
- **update_mask** | **str**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata | 
+ **update_mask** | **str**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata | 
  **device** | [**Device**](Device.md)| application/json | 
 
 ### Return type

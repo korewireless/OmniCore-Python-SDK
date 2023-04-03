@@ -34,6 +34,7 @@ OmniCore/models/list_devices_response.py
 OmniCore/models/log_level.py
 OmniCore/models/mqtt_config.py
 OmniCore/models/notification_config.py
+OmniCore/models/policy.py
 OmniCore/models/public_key_certificate.py
 OmniCore/models/public_key_credential.py
 OmniCore/models/registry_credential.py
@@ -65,6 +66,7 @@ docs/ListDevicesResponse.md
 docs/LogLevel.md
 docs/MqttConfig.md
 docs/NotificationConfig.md
+docs/Policy.md
 docs/PublicKeyCertificate.md
 docs/PublicKeyCredential.md
 docs/RegistryApi.md
@@ -76,4 +78,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_policy.py
 tox.ini
