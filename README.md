@@ -170,6 +170,6 @@ Class | Method | HTTP request | Description
 
 ## Author
 
-support@korewireless.com
+omnicoresupport@korewireless.com
 
 

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **event_notification_configs** | [**List[EventNotificationConfig]**](EventNotificationConfig.md) |  | [optional] 
 **log_notification_config** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
 **state_notification_config** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
+**jitr_notification_config** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
 **number_of_devices** | **int** |  | [optional] [readonly] 
 **number_of_gateways** | **int** |  | [optional] [readonly] 
 

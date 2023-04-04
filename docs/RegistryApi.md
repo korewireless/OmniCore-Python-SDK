@@ -575,7 +575,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    update_mask = 'update_mask_example' # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
+    update_mask = 'update_mask_example' # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
     registry = OmniCore.DeviceRegistry() # DeviceRegistry | application/json (optional)
 
     try:
@@ -622,7 +622,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    update_mask = 'update_mask_example' # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
+    update_mask = 'update_mask_example' # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
     registry = OmniCore.DeviceRegistry() # DeviceRegistry | application/json (optional)
 
     try:
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **update_mask** | **str**| values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials | 
+ **update_mask** | **str**| values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials | 
  **registry** | [**DeviceRegistry**](DeviceRegistry.md)| application/json | [optional] 
 
 ### Return type
