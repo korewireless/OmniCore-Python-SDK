@@ -20,8 +20,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr
 
-from typing import Optional
+from typing import Any, Dict, List, Optional
 
+from OmniCore.models.device_command import DeviceCommand
 from OmniCore.models.device_registry import DeviceRegistry
 from OmniCore.models.info import Info
 from OmniCore.models.list_device_registries import ListDeviceRegistries
@@ -189,7 +190,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries', 'POST',
+            '/subscriptions/{subscriptionId}/registries', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -342,7 +343,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}', 'DELETE',
+            '/subscriptions/{subscriptionId}/registries/{registryId}', 'DELETE',
             _path_params,
             _query_params,
             _header_params,
@@ -359,14 +360,14 @@ class RegistryApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_registries(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="Page Size")] = None, **kwargs) -> ListDeviceRegistries:  # noqa: E501
+    def get_registries(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="Page Size")] = None, registry_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of registry string IDs. For example, ['registry0', 'registry12']. If empty, this field is ignored. Maximum IDs: 10,000")] = None, **kwargs) -> ListDeviceRegistries:  # noqa: E501
         """get_registries  # noqa: E501
 
         Get all registries under a subscription  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_registries(subscription_id, page_number, page_size, async_req=True)
+        >>> thread = api.get_registries(subscription_id, page_number, page_size, registry_ids, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
@@ -375,6 +376,8 @@ class RegistryApi(object):
         :type page_number: int
         :param page_size: Page Size
         :type page_size: int
+        :param registry_ids: A list of registry string IDs. For example, ['registry0', 'registry12']. If empty, this field is ignored. Maximum IDs: 10,000
+        :type registry_ids: List[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -391,17 +394,17 @@ class RegistryApi(object):
         :rtype: ListDeviceRegistries
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_registries_with_http_info(subscription_id, page_number, page_size, **kwargs)  # noqa: E501
+        return self.get_registries_with_http_info(subscription_id, page_number, page_size, registry_ids, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_registries_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="Page Size")] = None, **kwargs):  # noqa: E501
+    def get_registries_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="Page Size")] = None, registry_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of registry string IDs. For example, ['registry0', 'registry12']. If empty, this field is ignored. Maximum IDs: 10,000")] = None, **kwargs):  # noqa: E501
         """get_registries  # noqa: E501
 
         Get all registries under a subscription  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_registries_with_http_info(subscription_id, page_number, page_size, async_req=True)
+        >>> thread = api.get_registries_with_http_info(subscription_id, page_number, page_size, registry_ids, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
@@ -410,6 +413,8 @@ class RegistryApi(object):
         :type page_number: int
         :param page_size: Page Size
         :type page_size: int
+        :param registry_ids: A list of registry string IDs. For example, ['registry0', 'registry12']. If empty, this field is ignored. Maximum IDs: 10,000
+        :type registry_ids: List[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -439,7 +444,8 @@ class RegistryApi(object):
         _all_params = [
             'subscription_id',
             'page_number',
-            'page_size'
+            'page_size',
+            'registry_ids'
         ]
         _all_params.extend(
             [
@@ -476,6 +482,9 @@ class RegistryApi(object):
             _query_params.append(('pageNumber', _params['page_number']))
         if _params.get('page_size') is not None:  # noqa: E501
             _query_params.append(('pageSize', _params['page_size']))
+        if _params.get('registry_ids') is not None:  # noqa: E501
+            _query_params.append(('registryIds', _params['registry_ids']))
+            _collection_formats['registryIds'] = 'csv'
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
@@ -502,7 +511,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries', 'GET',
+            '/subscriptions/{subscriptionId}/registries', 'GET',
             _path_params,
             _query_params,
             _header_params,
@@ -655,7 +664,174 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}', 'GET',
+            '/subscriptions/{subscriptionId}/registries/{registryId}', 'GET',
+            _path_params,
+            _query_params,
+            _header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            response_types_map=_response_types_map,
+            auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
+            _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=_params.get('_preload_content', True),
+            _request_timeout=_params.get('_request_timeout'),
+            collection_formats=_collection_formats,
+            _request_auth=_params.get('_request_auth'))
+
+    @validate_arguments
+    def send_broadcast_to_devices(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], registry : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs) -> object:  # noqa: E501
+        """send_broadcast_to_devices  # noqa: E501
+
+        Send  Broadcast To Devices  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.send_broadcast_to_devices(subscriptionid, registry_id, registry, async_req=True)
+        >>> result = thread.get()
+
+        :param subscriptionid: Subscription ID (required)
+        :type subscriptionid: str
+        :param registry_id: Registry ID (required)
+        :type registry_id: str
+        :param registry: application/json (required)
+        :type registry: DeviceCommand
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: object
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.send_broadcast_to_devices_with_http_info(subscriptionid, registry_id, registry, **kwargs)  # noqa: E501
+
+    @validate_arguments
+    def send_broadcast_to_devices_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], registry : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs):  # noqa: E501
+        """send_broadcast_to_devices  # noqa: E501
+
+        Send  Broadcast To Devices  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.send_broadcast_to_devices_with_http_info(subscriptionid, registry_id, registry, async_req=True)
+        >>> result = thread.get()
+
+        :param subscriptionid: Subscription ID (required)
+        :type subscriptionid: str
+        :param registry_id: Registry ID (required)
+        :type registry_id: str
+        :param registry: application/json (required)
+        :type registry: DeviceCommand
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        _params = locals()
+
+        _all_params = [
+            'subscriptionid',
+            'registry_id',
+            'registry'
+        ]
+        _all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        # validate the arguments
+        for _key, _val in _params['kwargs'].items():
+            if _key not in _all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method send_broadcast_to_devices" % _key
+                )
+            _params[_key] = _val
+        del _params['kwargs']
+
+        _collection_formats = {}
+
+        # process the path parameters
+        _path_params = {}
+        if _params['subscriptionid']:
+            _path_params['subscriptionid'] = _params['subscriptionid']
+        if _params['registry_id']:
+            _path_params['registryId'] = _params['registry_id']
+
+        # process the query parameters
+        _query_params = []
+
+        # process the header parameters
+        _header_params = dict(_params.get('_headers', {}))
+
+        # process the form parameters
+        _form_params = []
+        _files = {}
+
+        # process the body parameter
+        _body_params = None
+        if _params['registry']:
+            _body_params = _params['registry']
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # set the HTTP header `Content-Type`
+        _content_types_list = _params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json']))
+        if _content_types_list:
+                _header_params['Content-Type'] = _content_types_list
+
+        # authentication setting
+        _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
+
+        _response_types_map = {
+            '200': "object",
+            '400': "GenericErrorResponse",
+            '404': "GenericErrorResponse",
+            '500': "GenericErrorResponse",
+        }
+
+        return self.api_client.call_api(
+            '/subscriptions/{subscriptionid}/registries/{registryId}/sendBroadcastToDevice', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -829,7 +1005,7 @@ class RegistryApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}', 'PATCH',
+            '/subscriptions/{subscriptionId}/registries/{registryId}', 'PATCH',
             _path_params,
             _query_params,
             _header_params,

@@ -204,7 +204,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway', 'POST',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -371,7 +371,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway', 'POST',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -545,7 +545,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication', 'PUT',
+            '/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication', 'PUT',
             _path_params,
             _query_params,
             _header_params,
@@ -712,7 +712,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices', 'POST',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/devices', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -872,7 +872,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}', 'DELETE',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}', 'DELETE',
             _path_params,
             _query_params,
             _header_params,
@@ -1039,7 +1039,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions', 'GET',
+            '/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions', 'GET',
             _path_params,
             _query_params,
             _header_params,
@@ -1199,7 +1199,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}', 'GET',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}', 'GET',
             _path_params,
             _query_params,
             _header_params,
@@ -1410,7 +1410,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices', 'GET',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/devices', 'GET',
             _path_params,
             _query_params,
             _header_params,
@@ -1577,7 +1577,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states', 'GET',
+            '/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states', 'GET',
             _path_params,
             _query_params,
             _header_params,
@@ -1751,7 +1751,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice', 'POST',
+            '/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -1918,7 +1918,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway', 'POST',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -2085,7 +2085,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway', 'POST',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -2259,7 +2259,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice', 'POST',
+            '/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice', 'POST',
             _path_params,
             _query_params,
             _header_params,
@@ -2440,7 +2440,7 @@ class DeviceApi(object):
         }
 
         return self.api_client.call_api(
-            '/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}', 'PATCH',
+            '/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}', 'PATCH',
             _path_params,
             _query_params,
             _header_params,
