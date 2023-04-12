@@ -848,7 +848,7 @@ class RegistryApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_registry(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs) -> DeviceRegistry:  # noqa: E501
+    def update_registry(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs) -> DeviceRegistry:  # noqa: E501
         """update_registry  # noqa: E501
 
         Update a registry  # noqa: E501
@@ -862,7 +862,7 @@ class RegistryApi(object):
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param update_mask: values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials (required)
+        :param update_mask: values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled (required)
         :type update_mask: str
         :param registry: application/json
         :type registry: DeviceRegistry
@@ -885,7 +885,7 @@ class RegistryApi(object):
         return self.update_registry_with_http_info(subscription_id, registry_id, update_mask, registry, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_registry_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs):  # noqa: E501
+    def update_registry_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], update_mask : Annotated[StrictStr, Field(..., description="values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled")], registry : Annotated[Optional[DeviceRegistry], Field(description="application/json")] = None, **kwargs):  # noqa: E501
         """update_registry  # noqa: E501
 
         Update a registry  # noqa: E501
@@ -899,7 +899,7 @@ class RegistryApi(object):
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param update_mask: values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials (required)
+        :param update_mask: values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled (required)
         :type update_mask: str
         :param registry: application/json
         :type registry: DeviceRegistry

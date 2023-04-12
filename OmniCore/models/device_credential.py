@@ -29,8 +29,9 @@ class DeviceCredential(BaseModel):
     Do not edit the class manually.
     """
     expiration_time: Optional[StrictStr] = Field(None, alias="expirationTime", description="ExpirationTime: [Optional] The time at which this credential becomes invalid. This credential will be ignored for new client authentication requests after this timestamp; however, it will not be automatically deleted.")
+    id: Optional[StrictStr] = None
     public_key: Optional[PublicKeyCredential] = Field(None, alias="publicKey")
-    __properties = ["expirationTime", "publicKey"]
+    __properties = ["expirationTime", "id", "publicKey"]
 
     class Config:
         allow_population_by_field_name = True
@@ -53,6 +54,7 @@ class DeviceCredential(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "id",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of public_key
@@ -71,6 +73,7 @@ class DeviceCredential(BaseModel):
 
         _obj = DeviceCredential.parse_obj({
             "expiration_time": obj.get("expirationTime"),
+            "id": obj.get("id"),
             "public_key": PublicKeyCredential.from_dict(obj.get("publicKey")) if obj.get("publicKey") is not None else None
         })
         return _obj

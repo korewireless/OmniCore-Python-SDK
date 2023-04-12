@@ -19,7 +19,7 @@ import json
 
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, constr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, constr
 from OmniCore.models.event_notification_config import EventNotificationConfig
 from OmniCore.models.http_config import HttpConfig
 from OmniCore.models.log_level import LogLevel
@@ -45,10 +45,11 @@ class DeviceRegistry(BaseModel):
     event_notification_configs: Optional[List[EventNotificationConfig]] = Field(None, alias="eventNotificationConfigs")
     log_notification_config: Optional[NotificationConfig] = Field(None, alias="logNotificationConfig")
     state_notification_config: Optional[NotificationConfig] = Field(None, alias="stateNotificationConfig")
-    jitr_notification_config: Optional[NotificationConfig] = Field(None, alias="jitrNotificationConfig")
+    custom_onboard_notification_config: Optional[NotificationConfig] = Field(None, alias="customOnboardNotificationConfig")
+    custom_onboard_enabled: Optional[StrictBool] = Field(None, alias="customOnboardEnabled")
     number_of_devices: Optional[StrictInt] = Field(None, alias="numberOfDevices")
     number_of_gateways: Optional[StrictInt] = Field(None, alias="numberOfGateways")
-    __properties = ["id", "name", "parent", "createdOn", "updatedOn", "credentials", "httpConfig", "mqttConfig", "logLevel", "eventNotificationConfigs", "logNotificationConfig", "stateNotificationConfig", "jitrNotificationConfig", "numberOfDevices", "numberOfGateways"]
+    __properties = ["id", "name", "parent", "createdOn", "updatedOn", "credentials", "httpConfig", "mqttConfig", "logLevel", "eventNotificationConfigs", "logNotificationConfig", "stateNotificationConfig", "customOnboardNotificationConfig", "customOnboardEnabled", "numberOfDevices", "numberOfGateways"]
 
     class Config:
         allow_population_by_field_name = True
@@ -105,9 +106,9 @@ class DeviceRegistry(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of state_notification_config
         if self.state_notification_config:
             _dict['stateNotificationConfig'] = self.state_notification_config.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of jitr_notification_config
-        if self.jitr_notification_config:
-            _dict['jitrNotificationConfig'] = self.jitr_notification_config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of custom_onboard_notification_config
+        if self.custom_onboard_notification_config:
+            _dict['customOnboardNotificationConfig'] = self.custom_onboard_notification_config.to_dict()
         return _dict
 
     @classmethod
@@ -132,7 +133,8 @@ class DeviceRegistry(BaseModel):
             "event_notification_configs": [EventNotificationConfig.from_dict(_item) for _item in obj.get("eventNotificationConfigs")] if obj.get("eventNotificationConfigs") is not None else None,
             "log_notification_config": NotificationConfig.from_dict(obj.get("logNotificationConfig")) if obj.get("logNotificationConfig") is not None else None,
             "state_notification_config": NotificationConfig.from_dict(obj.get("stateNotificationConfig")) if obj.get("stateNotificationConfig") is not None else None,
-            "jitr_notification_config": NotificationConfig.from_dict(obj.get("jitrNotificationConfig")) if obj.get("jitrNotificationConfig") is not None else None,
+            "custom_onboard_notification_config": NotificationConfig.from_dict(obj.get("customOnboardNotificationConfig")) if obj.get("customOnboardNotificationConfig") is not None else None,
+            "custom_onboard_enabled": obj.get("customOnboardEnabled"),
             "number_of_devices": obj.get("numberOfDevices"),
             "number_of_gateways": obj.get("numberOfGateways")
         })

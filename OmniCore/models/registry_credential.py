@@ -19,7 +19,7 @@ import json
 
 
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StrictStr
 from OmniCore.models.public_key_certificate import PublicKeyCertificate
 
 class RegistryCredential(BaseModel):
@@ -29,7 +29,8 @@ class RegistryCredential(BaseModel):
     Do not edit the class manually.
     """
     public_key_certificate: Optional[PublicKeyCertificate] = Field(None, alias="publicKeyCertificate")
-    __properties = ["publicKeyCertificate"]
+    id: Optional[StrictStr] = None
+    __properties = ["publicKeyCertificate", "id"]
 
     class Config:
         allow_population_by_field_name = True
@@ -52,6 +53,7 @@ class RegistryCredential(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "id",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of public_key_certificate
@@ -69,7 +71,8 @@ class RegistryCredential(BaseModel):
             return RegistryCredential.parse_obj(obj)
 
         _obj = RegistryCredential.parse_obj({
-            "public_key_certificate": PublicKeyCertificate.from_dict(obj.get("publicKeyCertificate")) if obj.get("publicKeyCertificate") is not None else None
+            "public_key_certificate": PublicKeyCertificate.from_dict(obj.get("publicKeyCertificate")) if obj.get("publicKeyCertificate") is not None else None,
+            "id": obj.get("id")
         })
         return _obj
 
