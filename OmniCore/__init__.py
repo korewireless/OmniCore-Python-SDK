@@ -34,6 +34,7 @@ from OmniCore.exceptions import ApiException
 from OmniCore.models.bind_request import BindRequest
 from OmniCore.models.bind_request_ids_gateway import BindRequestIdsGateway
 from OmniCore.models.block_communication_body import BlockCommunicationBody
+from OmniCore.models.custom_onboard import CustomOnboard
 from OmniCore.models.device import Device
 from OmniCore.models.device_command import DeviceCommand
 from OmniCore.models.device_config import DeviceConfig

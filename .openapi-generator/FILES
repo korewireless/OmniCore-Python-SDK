@@ -13,6 +13,7 @@ OmniCore/models/__init__.py
 OmniCore/models/bind_request.py
 OmniCore/models/bind_request_ids_gateway.py
 OmniCore/models/block_communication_body.py
+OmniCore/models/custom_onboard.py
 OmniCore/models/device.py
 OmniCore/models/device_command.py
 OmniCore/models/device_config.py
@@ -44,6 +45,7 @@ README.md
 docs/BindRequest.md
 docs/BindRequestIdsGateway.md
 docs/BlockCommunicationBody.md
+docs/CustomOnboard.md
 docs/Device.md
 docs/DeviceApi.md
 docs/DeviceCommand.md
@@ -78,4 +80,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_custom_onboard.py
 tox.ini
