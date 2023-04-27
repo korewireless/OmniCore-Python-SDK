@@ -681,22 +681,22 @@ class RegistryApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def send_broadcast_to_devices(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], registry : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs) -> object:  # noqa: E501
+    def send_broadcast_to_devices(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], broadcast : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs) -> object:  # noqa: E501
         """send_broadcast_to_devices  # noqa: E501
 
         Send  Broadcast To Devices  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_broadcast_to_devices(subscriptionid, registry_id, registry, async_req=True)
+        >>> thread = api.send_broadcast_to_devices(subscriptionid, registry_id, broadcast, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
         :type subscriptionid: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param registry: application/json (required)
-        :type registry: DeviceCommand
+        :param broadcast: application/json (required)
+        :type broadcast: DeviceCommand
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -713,25 +713,25 @@ class RegistryApi(object):
         :rtype: object
         """
         kwargs['_return_http_data_only'] = True
-        return self.send_broadcast_to_devices_with_http_info(subscriptionid, registry_id, registry, **kwargs)  # noqa: E501
+        return self.send_broadcast_to_devices_with_http_info(subscriptionid, registry_id, broadcast, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def send_broadcast_to_devices_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], registry : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def send_broadcast_to_devices_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], broadcast : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """send_broadcast_to_devices  # noqa: E501
 
         Send  Broadcast To Devices  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_broadcast_to_devices_with_http_info(subscriptionid, registry_id, registry, async_req=True)
+        >>> thread = api.send_broadcast_to_devices_with_http_info(subscriptionid, registry_id, broadcast, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
         :type subscriptionid: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param registry: application/json (required)
-        :type registry: DeviceCommand
+        :param broadcast: application/json (required)
+        :type broadcast: DeviceCommand
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -761,7 +761,7 @@ class RegistryApi(object):
         _all_params = [
             'subscriptionid',
             'registry_id',
-            'registry'
+            'broadcast'
         ]
         _all_params.extend(
             [
@@ -806,8 +806,8 @@ class RegistryApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['registry']:
-            _body_params = _params['registry']
+        if _params['broadcast']:
+            _body_params = _params['broadcast']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(

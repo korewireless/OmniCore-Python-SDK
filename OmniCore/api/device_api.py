@@ -55,22 +55,22 @@ class DeviceApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def bind_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequest, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
+    def bind_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], bind : Annotated[BindRequest, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
         """bind_device  # noqa: E501
 
         Bind  a device to a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.bind_device(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.bind_device(subscription_id, registry_id, bind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequest
+        :param bind: application/json (required)
+        :type bind: BindRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -87,25 +87,25 @@ class DeviceApi(object):
         :rtype: Info
         """
         kwargs['_return_http_data_only'] = True
-        return self.bind_device_with_http_info(subscription_id, registry_id, device, **kwargs)  # noqa: E501
+        return self.bind_device_with_http_info(subscription_id, registry_id, bind, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def bind_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequest, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def bind_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], bind : Annotated[BindRequest, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """bind_device  # noqa: E501
 
         Bind  a device to a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.bind_device_with_http_info(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.bind_device_with_http_info(subscription_id, registry_id, bind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequest
+        :param bind: application/json (required)
+        :type bind: BindRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -135,7 +135,7 @@ class DeviceApi(object):
         _all_params = [
             'subscription_id',
             'registry_id',
-            'device'
+            'bind'
         ]
         _all_params.extend(
             [
@@ -180,8 +180,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['bind']:
+            _body_params = _params['bind']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -222,22 +222,22 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def bind_devices(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
+    def bind_devices(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], bind : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
         """bind_devices  # noqa: E501
 
         Bind devices to a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.bind_devices(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.bind_devices(subscription_id, registry_id, bind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequestIdsGateway
+        :param bind: application/json (required)
+        :type bind: BindRequestIdsGateway
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -254,25 +254,25 @@ class DeviceApi(object):
         :rtype: Info
         """
         kwargs['_return_http_data_only'] = True
-        return self.bind_devices_with_http_info(subscription_id, registry_id, device, **kwargs)  # noqa: E501
+        return self.bind_devices_with_http_info(subscription_id, registry_id, bind, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def bind_devices_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def bind_devices_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], bind : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """bind_devices  # noqa: E501
 
         Bind devices to a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.bind_devices_with_http_info(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.bind_devices_with_http_info(subscription_id, registry_id, bind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequestIdsGateway
+        :param bind: application/json (required)
+        :type bind: BindRequestIdsGateway
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -302,7 +302,7 @@ class DeviceApi(object):
         _all_params = [
             'subscription_id',
             'registry_id',
-            'device'
+            'bind'
         ]
         _all_params.extend(
             [
@@ -347,8 +347,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['bind']:
+            _body_params = _params['bind']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -389,14 +389,14 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def block_device_communcation(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[BlockCommunicationBody, Field(..., description="application/json")], **kwargs) -> object:  # noqa: E501
+    def block_device_communcation(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], block : Annotated[BlockCommunicationBody, Field(..., description="application/json")], **kwargs) -> object:  # noqa: E501
         """block_device_communcation  # noqa: E501
 
         Blocks All Communication From A Device  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.block_device_communcation(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.block_device_communcation(subscriptionid, registry_id, device_id, block, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -405,8 +405,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: BlockCommunicationBody
+        :param block: application/json (required)
+        :type block: BlockCommunicationBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -423,17 +423,17 @@ class DeviceApi(object):
         :rtype: object
         """
         kwargs['_return_http_data_only'] = True
-        return self.block_device_communcation_with_http_info(subscriptionid, registry_id, device_id, device, **kwargs)  # noqa: E501
+        return self.block_device_communcation_with_http_info(subscriptionid, registry_id, device_id, block, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def block_device_communcation_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[BlockCommunicationBody, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def block_device_communcation_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], block : Annotated[BlockCommunicationBody, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """block_device_communcation  # noqa: E501
 
         Blocks All Communication From A Device  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.block_device_communcation_with_http_info(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.block_device_communcation_with_http_info(subscriptionid, registry_id, device_id, block, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -442,8 +442,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: BlockCommunicationBody
+        :param block: application/json (required)
+        :type block: BlockCommunicationBody
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -474,7 +474,7 @@ class DeviceApi(object):
             'subscriptionid',
             'registry_id',
             'device_id',
-            'device'
+            'block'
         ]
         _all_params.extend(
             [
@@ -521,8 +521,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['block']:
+            _body_params = _params['block']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1595,14 +1595,14 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def send_command_to_device(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs) -> object:  # noqa: E501
+    def send_command_to_device(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], command : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs) -> object:  # noqa: E501
         """send_command_to_device  # noqa: E501
 
         Send A Command To A Device  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_command_to_device(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.send_command_to_device(subscriptionid, registry_id, device_id, command, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -1611,8 +1611,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: DeviceCommand
+        :param command: application/json (required)
+        :type command: DeviceCommand
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1629,17 +1629,17 @@ class DeviceApi(object):
         :rtype: object
         """
         kwargs['_return_http_data_only'] = True
-        return self.send_command_to_device_with_http_info(subscriptionid, registry_id, device_id, device, **kwargs)  # noqa: E501
+        return self.send_command_to_device_with_http_info(subscriptionid, registry_id, device_id, command, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def send_command_to_device_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def send_command_to_device_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], command : Annotated[DeviceCommand, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """send_command_to_device  # noqa: E501
 
         Send A Command To A Device  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.send_command_to_device_with_http_info(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.send_command_to_device_with_http_info(subscriptionid, registry_id, device_id, command, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -1648,8 +1648,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: DeviceCommand
+        :param command: application/json (required)
+        :type command: DeviceCommand
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -1680,7 +1680,7 @@ class DeviceApi(object):
             'subscriptionid',
             'registry_id',
             'device_id',
-            'device'
+            'command'
         ]
         _all_params.extend(
             [
@@ -1727,8 +1727,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['command']:
+            _body_params = _params['command']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1769,22 +1769,22 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def un_bind_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequest, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
+    def un_bind_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], unbind : Annotated[BindRequest, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
         """un_bind_device  # noqa: E501
 
         UnBind  a device from a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.un_bind_device(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.un_bind_device(subscription_id, registry_id, unbind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequest
+        :param unbind: application/json (required)
+        :type unbind: BindRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1801,25 +1801,25 @@ class DeviceApi(object):
         :rtype: Info
         """
         kwargs['_return_http_data_only'] = True
-        return self.un_bind_device_with_http_info(subscription_id, registry_id, device, **kwargs)  # noqa: E501
+        return self.un_bind_device_with_http_info(subscription_id, registry_id, unbind, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def un_bind_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequest, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def un_bind_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], unbind : Annotated[BindRequest, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """un_bind_device  # noqa: E501
 
         UnBind  a device from a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.un_bind_device_with_http_info(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.un_bind_device_with_http_info(subscription_id, registry_id, unbind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequest
+        :param unbind: application/json (required)
+        :type unbind: BindRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -1849,7 +1849,7 @@ class DeviceApi(object):
         _all_params = [
             'subscription_id',
             'registry_id',
-            'device'
+            'unbind'
         ]
         _all_params.extend(
             [
@@ -1894,8 +1894,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['unbind']:
+            _body_params = _params['unbind']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1936,22 +1936,22 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def un_bind_devices(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
+    def un_bind_devices(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], unbind : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
         """un_bind_devices  # noqa: E501
 
         UnBind devices from a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.un_bind_devices(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.un_bind_devices(subscription_id, registry_id, unbind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequestIdsGateway
+        :param unbind: application/json (required)
+        :type unbind: BindRequestIdsGateway
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1968,25 +1968,25 @@ class DeviceApi(object):
         :rtype: Info
         """
         kwargs['_return_http_data_only'] = True
-        return self.un_bind_devices_with_http_info(subscription_id, registry_id, device, **kwargs)  # noqa: E501
+        return self.un_bind_devices_with_http_info(subscription_id, registry_id, unbind, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def un_bind_devices_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def un_bind_devices_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], unbind : Annotated[BindRequestIdsGateway, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """un_bind_devices  # noqa: E501
 
         UnBind devices from a gateway under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.un_bind_devices_with_http_info(subscription_id, registry_id, device, async_req=True)
+        >>> thread = api.un_bind_devices_with_http_info(subscription_id, registry_id, unbind, async_req=True)
         >>> result = thread.get()
 
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
         :param registry_id: Registry ID (required)
         :type registry_id: str
-        :param device: application/json (required)
-        :type device: BindRequestIdsGateway
+        :param unbind: application/json (required)
+        :type unbind: BindRequestIdsGateway
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -2016,7 +2016,7 @@ class DeviceApi(object):
         _all_params = [
             'subscription_id',
             'registry_id',
-            'device'
+            'unbind'
         ]
         _all_params.extend(
             [
@@ -2061,8 +2061,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['unbind']:
+            _body_params = _params['unbind']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -2103,14 +2103,14 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_configuration_to_device(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[DeviceConfiguration, Field(..., description="application/json")], **kwargs) -> DeviceConfig:  # noqa: E501
+    def update_configuration_to_device(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], configuration : Annotated[DeviceConfiguration, Field(..., description="application/json")], **kwargs) -> DeviceConfig:  # noqa: E501
         """update_configuration_to_device  # noqa: E501
 
         Update A Configuration Of A Device  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_configuration_to_device(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.update_configuration_to_device(subscriptionid, registry_id, device_id, configuration, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -2119,8 +2119,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: DeviceConfiguration
+        :param configuration: application/json (required)
+        :type configuration: DeviceConfiguration
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2137,17 +2137,17 @@ class DeviceApi(object):
         :rtype: DeviceConfig
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_configuration_to_device_with_http_info(subscriptionid, registry_id, device_id, device, **kwargs)  # noqa: E501
+        return self.update_configuration_to_device_with_http_info(subscriptionid, registry_id, device_id, configuration, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_configuration_to_device_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[DeviceConfiguration, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def update_configuration_to_device_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], configuration : Annotated[DeviceConfiguration, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """update_configuration_to_device  # noqa: E501
 
         Update A Configuration Of A Device  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_configuration_to_device_with_http_info(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.update_configuration_to_device_with_http_info(subscriptionid, registry_id, device_id, configuration, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -2156,8 +2156,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: DeviceConfiguration
+        :param configuration: application/json (required)
+        :type configuration: DeviceConfiguration
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -2188,7 +2188,7 @@ class DeviceApi(object):
             'subscriptionid',
             'registry_id',
             'device_id',
-            'device'
+            'configuration'
         ]
         _all_params.extend(
             [
@@ -2235,8 +2235,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['configuration']:
+            _body_params = _params['configuration']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -2277,14 +2277,14 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_custom_onboard_request(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[CustomOnboard, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
+    def update_custom_onboard_request(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], custom_onboard : Annotated[CustomOnboard, Field(..., description="application/json")], **kwargs) -> Info:  # noqa: E501
         """update_custom_onboard_request  # noqa: E501
 
         Approve/Reject a Custom Onboard Request  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_custom_onboard_request(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.update_custom_onboard_request(subscriptionid, registry_id, device_id, custom_onboard, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -2293,8 +2293,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: CustomOnboard
+        :param custom_onboard: application/json (required)
+        :type custom_onboard: CustomOnboard
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2311,17 +2311,17 @@ class DeviceApi(object):
         :rtype: Info
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_custom_onboard_request_with_http_info(subscriptionid, registry_id, device_id, device, **kwargs)  # noqa: E501
+        return self.update_custom_onboard_request_with_http_info(subscriptionid, registry_id, device_id, custom_onboard, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_custom_onboard_request_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], device : Annotated[CustomOnboard, Field(..., description="application/json")], **kwargs):  # noqa: E501
+    def update_custom_onboard_request_with_http_info(self, subscriptionid : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], custom_onboard : Annotated[CustomOnboard, Field(..., description="application/json")], **kwargs):  # noqa: E501
         """update_custom_onboard_request  # noqa: E501
 
         Approve/Reject a Custom Onboard Request  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_custom_onboard_request_with_http_info(subscriptionid, registry_id, device_id, device, async_req=True)
+        >>> thread = api.update_custom_onboard_request_with_http_info(subscriptionid, registry_id, device_id, custom_onboard, async_req=True)
         >>> result = thread.get()
 
         :param subscriptionid: Subscription ID (required)
@@ -2330,8 +2330,8 @@ class DeviceApi(object):
         :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
-        :param device: application/json (required)
-        :type device: CustomOnboard
+        :param custom_onboard: application/json (required)
+        :type custom_onboard: CustomOnboard
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -2362,7 +2362,7 @@ class DeviceApi(object):
             'subscriptionid',
             'registry_id',
             'device_id',
-            'device'
+            'custom_onboard'
         ]
         _all_params.extend(
             [
@@ -2409,8 +2409,8 @@ class DeviceApi(object):
 
         # process the body parameter
         _body_params = None
-        if _params['device']:
-            _body_params = _params['device']
+        if _params['custom_onboard']:
+            _body_params = _params['custom_onboard']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
