@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.0.0"
+__version__ = "1.7.2"
 
 # import apis into sdk package
 from OmniCore.api.device_api import DeviceApi
