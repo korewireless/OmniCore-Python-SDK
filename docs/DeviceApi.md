@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_device**
-> Device get_device(registry_id, subscription_id, device_id)
+> Device get_device(subscription_id, registry_id, device_id)
 
 
 
@@ -862,12 +862,12 @@ configuration = OmniCore.Configuration(
 with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.DeviceApi(api_client)
-    registry_id = 'registry_id_example' # str | Registry ID
     subscription_id = 'subscription_id_example' # str | Subscription ID
+    registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
 
     try:
-        api_response = api_instance.get_device(registry_id, subscription_id, device_id)
+        api_response = api_instance.get_device(subscription_id, registry_id, device_id)
         print("The response of DeviceApi->get_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -908,12 +908,12 @@ configuration = OmniCore.Configuration(
 with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.DeviceApi(api_client)
-    registry_id = 'registry_id_example' # str | Registry ID
     subscription_id = 'subscription_id_example' # str | Subscription ID
+    registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
 
     try:
-        api_response = api_instance.get_device(registry_id, subscription_id, device_id)
+        api_response = api_instance.get_device(subscription_id, registry_id, device_id)
         print("The response of DeviceApi->get_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -924,8 +924,8 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **registry_id** | **str**| Registry ID | 
  **subscription_id** | **str**| Subscription ID | 
+ **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
 
 ### Return type
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_devices**
-> ListDevicesResponse get_devices(registry_id, subscription_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
+> ListDevicesResponse get_devices(subscription_id, registry_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
 
 
 
@@ -994,8 +994,8 @@ configuration = OmniCore.Configuration(
 with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.DeviceApi(api_client)
-    registry_id = 'registry_id_example' # str | Registry ID
     subscription_id = 'subscription_id_example' # str | Subscription ID
+    registry_id = 'registry_id_example' # str | Registry ID
     page_number = 56 # int | Page Number (optional)
     page_size = 56 # int | The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)
     field_mask = 'field_mask_example' # str | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)
@@ -1006,7 +1006,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     gateway_list_options_gateway_type = 'gateway_list_options_gateway_type_example' # str | If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional)
 
     try:
-        api_response = api_instance.get_devices(registry_id, subscription_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
+        api_response = api_instance.get_devices(subscription_id, registry_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
         print("The response of DeviceApi->get_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -1047,8 +1047,8 @@ configuration = OmniCore.Configuration(
 with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.DeviceApi(api_client)
-    registry_id = 'registry_id_example' # str | Registry ID
     subscription_id = 'subscription_id_example' # str | Subscription ID
+    registry_id = 'registry_id_example' # str | Registry ID
     page_number = 56 # int | Page Number (optional)
     page_size = 56 # int | The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)
     field_mask = 'field_mask_example' # str | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)
@@ -1059,7 +1059,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     gateway_list_options_gateway_type = 'gateway_list_options_gateway_type_example' # str | If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional)
 
     try:
-        api_response = api_instance.get_devices(registry_id, subscription_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
+        api_response = api_instance.get_devices(subscription_id, registry_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
         print("The response of DeviceApi->get_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -1070,8 +1070,8 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **registry_id** | **str**| Registry ID | 
  **subscription_id** | **str**| Subscription ID | 
+ **registry_id** | **str**| Registry ID | 
  **page_number** | **int**| Page Number | [optional] 
  **page_size** | **int**| The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  | [optional] 
  **field_mask** | **str**| The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  | [optional] 

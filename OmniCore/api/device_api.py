@@ -1057,20 +1057,20 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_device(self, registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], **kwargs) -> Device:  # noqa: E501
+    def get_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], **kwargs) -> Device:  # noqa: E501
         """get_device  # noqa: E501
 
         Get a device under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_device(registry_id, subscription_id, device_id, async_req=True)
+        >>> thread = api.get_device(subscription_id, registry_id, device_id, async_req=True)
         >>> result = thread.get()
 
-        :param registry_id: Registry ID (required)
-        :type registry_id: str
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
+        :param registry_id: Registry ID (required)
+        :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
         :param async_req: Whether to execute the request asynchronously.
@@ -1089,23 +1089,23 @@ class DeviceApi(object):
         :rtype: Device
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_device_with_http_info(registry_id, subscription_id, device_id, **kwargs)  # noqa: E501
+        return self.get_device_with_http_info(subscription_id, registry_id, device_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_device_with_http_info(self, registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], **kwargs):  # noqa: E501
+    def get_device_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], **kwargs):  # noqa: E501
         """get_device  # noqa: E501
 
         Get a device under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_device_with_http_info(registry_id, subscription_id, device_id, async_req=True)
+        >>> thread = api.get_device_with_http_info(subscription_id, registry_id, device_id, async_req=True)
         >>> result = thread.get()
 
-        :param registry_id: Registry ID (required)
-        :type registry_id: str
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
+        :param registry_id: Registry ID (required)
+        :type registry_id: str
         :param device_id: Device ID (required)
         :type device_id: str
         :param async_req: Whether to execute the request asynchronously.
@@ -1135,8 +1135,8 @@ class DeviceApi(object):
         _params = locals()
 
         _all_params = [
-            'registry_id',
             'subscription_id',
+            'registry_id',
             'device_id'
         ]
         _all_params.extend(
@@ -1165,10 +1165,10 @@ class DeviceApi(object):
 
         # process the path parameters
         _path_params = {}
-        if _params['registry_id']:
-            _path_params['registryId'] = _params['registry_id']
         if _params['subscription_id']:
             _path_params['subscriptionId'] = _params['subscription_id']
+        if _params['registry_id']:
+            _path_params['registryId'] = _params['registry_id']
         if _params['device_id']:
             _path_params['deviceId'] = _params['device_id']
 
@@ -1217,20 +1217,20 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_devices(self, registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="The maximum number of devices to return in the response. If this value is zero, the service will select a default size. ")] = None, field_mask : Annotated[Optional[StrictStr], Field(description="The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example: ")] = None, device_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device string IDs. For example, ['device0', 'device12']. If empty, this field is ignored. Maximum IDs: 10,000")] = None, device_num_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.")] = None, gateway_list_options_associations_device_id : Annotated[Optional[StrictStr], Field(description="If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound.")] = None, gateway_list_options_associations_gateway_id : Annotated[Optional[StrictStr], Field(description="If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned")] = None, gateway_list_options_gateway_type : Annotated[Optional[StrictStr], Field(description="If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned.")] = None, **kwargs) -> ListDevicesResponse:  # noqa: E501
+    def get_devices(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="The maximum number of devices to return in the response. If this value is zero, the service will select a default size. ")] = None, field_mask : Annotated[Optional[StrictStr], Field(description="The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example: ")] = None, device_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device string IDs. For example, ['device0', 'device12']. If empty, this field is ignored. Maximum IDs: 10,000")] = None, device_num_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.")] = None, gateway_list_options_associations_device_id : Annotated[Optional[StrictStr], Field(description="If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound.")] = None, gateway_list_options_associations_gateway_id : Annotated[Optional[StrictStr], Field(description="If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned")] = None, gateway_list_options_gateway_type : Annotated[Optional[StrictStr], Field(description="If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned.")] = None, **kwargs) -> ListDevicesResponse:  # noqa: E501
         """get_devices  # noqa: E501
 
         Get all devices under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_devices(registry_id, subscription_id, page_number, page_size, field_mask, device_ids, device_num_ids, gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type, async_req=True)
+        >>> thread = api.get_devices(subscription_id, registry_id, page_number, page_size, field_mask, device_ids, device_num_ids, gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type, async_req=True)
         >>> result = thread.get()
 
-        :param registry_id: Registry ID (required)
-        :type registry_id: str
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
+        :param registry_id: Registry ID (required)
+        :type registry_id: str
         :param page_number: Page Number
         :type page_number: int
         :param page_size: The maximum number of devices to return in the response. If this value is zero, the service will select a default size. 
@@ -1263,23 +1263,23 @@ class DeviceApi(object):
         :rtype: ListDevicesResponse
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_devices_with_http_info(registry_id, subscription_id, page_number, page_size, field_mask, device_ids, device_num_ids, gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type, **kwargs)  # noqa: E501
+        return self.get_devices_with_http_info(subscription_id, registry_id, page_number, page_size, field_mask, device_ids, device_num_ids, gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_devices_with_http_info(self, registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="The maximum number of devices to return in the response. If this value is zero, the service will select a default size. ")] = None, field_mask : Annotated[Optional[StrictStr], Field(description="The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example: ")] = None, device_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device string IDs. For example, ['device0', 'device12']. If empty, this field is ignored. Maximum IDs: 10,000")] = None, device_num_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.")] = None, gateway_list_options_associations_device_id : Annotated[Optional[StrictStr], Field(description="If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound.")] = None, gateway_list_options_associations_gateway_id : Annotated[Optional[StrictStr], Field(description="If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned")] = None, gateway_list_options_gateway_type : Annotated[Optional[StrictStr], Field(description="If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned.")] = None, **kwargs):  # noqa: E501
+    def get_devices_with_http_info(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], page_number : Annotated[Optional[StrictInt], Field(description="Page Number")] = None, page_size : Annotated[Optional[StrictInt], Field(description="The maximum number of devices to return in the response. If this value is zero, the service will select a default size. ")] = None, field_mask : Annotated[Optional[StrictStr], Field(description="The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example: ")] = None, device_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device string IDs. For example, ['device0', 'device12']. If empty, this field is ignored. Maximum IDs: 10,000")] = None, device_num_ids : Annotated[Optional[List[StrictStr]], Field(description="A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.")] = None, gateway_list_options_associations_device_id : Annotated[Optional[StrictStr], Field(description="If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound.")] = None, gateway_list_options_associations_gateway_id : Annotated[Optional[StrictStr], Field(description="If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned")] = None, gateway_list_options_gateway_type : Annotated[Optional[StrictStr], Field(description="If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned.")] = None, **kwargs):  # noqa: E501
         """get_devices  # noqa: E501
 
         Get all devices under a registry  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_devices_with_http_info(registry_id, subscription_id, page_number, page_size, field_mask, device_ids, device_num_ids, gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type, async_req=True)
+        >>> thread = api.get_devices_with_http_info(subscription_id, registry_id, page_number, page_size, field_mask, device_ids, device_num_ids, gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type, async_req=True)
         >>> result = thread.get()
 
-        :param registry_id: Registry ID (required)
-        :type registry_id: str
         :param subscription_id: Subscription ID (required)
         :type subscription_id: str
+        :param registry_id: Registry ID (required)
+        :type registry_id: str
         :param page_number: Page Number
         :type page_number: int
         :param page_size: The maximum number of devices to return in the response. If this value is zero, the service will select a default size. 
@@ -1323,8 +1323,8 @@ class DeviceApi(object):
         _params = locals()
 
         _all_params = [
-            'registry_id',
             'subscription_id',
+            'registry_id',
             'page_number',
             'page_size',
             'field_mask',
@@ -1360,10 +1360,10 @@ class DeviceApi(object):
 
         # process the path parameters
         _path_params = {}
-        if _params['registry_id']:
-            _path_params['registryId'] = _params['registry_id']
         if _params['subscription_id']:
             _path_params['subscriptionId'] = _params['subscription_id']
+        if _params['registry_id']:
+            _path_params['registryId'] = _params['registry_id']
 
         # process the query parameters
         _query_params = []
