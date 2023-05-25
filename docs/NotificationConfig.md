@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pubsub_topic_name** | **str** | PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;. | [optional] 
-**is_gcp_pub_sub** | **bool** | Describe whether the topic is Gcp pubsub topic or Omni topic | [optional] 
 
 ## Example
 

@@ -398,7 +398,7 @@ conf = OmniCore.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.0\n"\
-               "SDK Package Version: 1.7.3".\
+               "SDK Package Version: 1.7.4".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

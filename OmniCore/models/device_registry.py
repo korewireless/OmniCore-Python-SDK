@@ -42,6 +42,7 @@ class DeviceRegistry(BaseModel):
     http_config: Optional[HttpConfig] = Field(None, alias="httpConfig")
     mqtt_config: Optional[MqttConfig] = Field(None, alias="mqttConfig")
     log_level: Optional[LogLevel] = Field(None, alias="logLevel")
+    is_nats_route: Optional[StrictBool] = Field(None, alias="isNatsRoute")
     event_notification_configs: Optional[List[EventNotificationConfig]] = Field(None, alias="eventNotificationConfigs")
     log_notification_config: Optional[NotificationConfig] = Field(None, alias="logNotificationConfig")
     state_notification_config: Optional[NotificationConfig] = Field(None, alias="stateNotificationConfig")
@@ -49,7 +50,7 @@ class DeviceRegistry(BaseModel):
     custom_onboard_enabled: Optional[StrictBool] = Field(None, alias="customOnboardEnabled")
     number_of_devices: Optional[StrictInt] = Field(None, alias="numberOfDevices")
     number_of_gateways: Optional[StrictInt] = Field(None, alias="numberOfGateways")
-    __properties = ["id", "name", "parent", "createdOn", "updatedOn", "credentials", "httpConfig", "mqttConfig", "logLevel", "eventNotificationConfigs", "logNotificationConfig", "stateNotificationConfig", "customOnboardNotificationConfig", "customOnboardEnabled", "numberOfDevices", "numberOfGateways"]
+    __properties = ["id", "name", "parent", "createdOn", "updatedOn", "credentials", "httpConfig", "mqttConfig", "logLevel", "isNatsRoute", "eventNotificationConfigs", "logNotificationConfig", "stateNotificationConfig", "customOnboardNotificationConfig", "customOnboardEnabled", "numberOfDevices", "numberOfGateways"]
 
     class Config:
         allow_population_by_field_name = True
@@ -130,6 +131,7 @@ class DeviceRegistry(BaseModel):
             "http_config": HttpConfig.from_dict(obj.get("httpConfig")) if obj.get("httpConfig") is not None else None,
             "mqtt_config": MqttConfig.from_dict(obj.get("mqttConfig")) if obj.get("mqttConfig") is not None else None,
             "log_level": obj.get("logLevel"),
+            "is_nats_route": obj.get("isNatsRoute"),
             "event_notification_configs": [EventNotificationConfig.from_dict(_item) for _item in obj.get("eventNotificationConfigs")] if obj.get("eventNotificationConfigs") is not None else None,
             "log_notification_config": NotificationConfig.from_dict(obj.get("logNotificationConfig")) if obj.get("logNotificationConfig") is not None else None,
             "state_notification_config": NotificationConfig.from_dict(obj.get("stateNotificationConfig")) if obj.get("stateNotificationConfig") is not None else None,
