@@ -15,11 +15,13 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.7.4"
+__version__ = ""
 
 # import apis into sdk package
 from OmniCore.api.device_api import DeviceApi
+from OmniCore.api.metrics_api import MetricsApi
 from OmniCore.api.registry_api import RegistryApi
+from OmniCore.api.sink_api import SinkApi
 
 # import ApiClient
 from OmniCore.api_client import ApiClient
@@ -53,11 +55,17 @@ from OmniCore.models.list_device_config_versions_response import ListDeviceConfi
 from OmniCore.models.list_device_registries import ListDeviceRegistries
 from OmniCore.models.list_device_states_response import ListDeviceStatesResponse
 from OmniCore.models.list_devices_response import ListDevicesResponse
+from OmniCore.models.list_sinks import ListSinks
+from OmniCore.models.list_sinks_sinks_inner import ListSinksSinksInner
+from OmniCore.models.list_sinks_sinks_inner_config import ListSinksSinksInnerConfig
 from OmniCore.models.log_level import LogLevel
+from OmniCore.models.metrics import Metrics
+from OmniCore.models.metrics_details import MetricsDetails
 from OmniCore.models.mqtt_config import MqttConfig
 from OmniCore.models.notification_config import NotificationConfig
 from OmniCore.models.policy import Policy
 from OmniCore.models.public_key_certificate import PublicKeyCertificate
 from OmniCore.models.public_key_credential import PublicKeyCredential
 from OmniCore.models.registry_credential import RegistryCredential
+from OmniCore.models.sink import Sink
 from OmniCore.models.x509_certificate_details import X509CertificateDetails

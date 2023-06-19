@@ -14,24 +14,27 @@
 from __future__ import absolute_import
 
 import unittest
-import datetime
 
 import OmniCore
-from OmniCore.models.log_level import LogLevel  # noqa: E501
+from OmniCore.api.metrics_api import MetricsApi  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestLogLevel(unittest.TestCase):
-    """LogLevel unit test stubs"""
+
+class TestMetricsApi(unittest.TestCase):
+    """MetricsApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = OmniCore.api.metrics_api.MetricsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testLogLevel(self):
-        """Test LogLevel"""
-        # inst = LogLevel()
+    def test_get_metrics(self):
+        """Test case for get_metrics
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

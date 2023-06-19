@@ -730,7 +730,7 @@ class DeviceApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], **kwargs) -> Info:  # noqa: E501
+    def delete_device(self, subscription_id : Annotated[StrictStr, Field(..., description="Subscription ID")], registry_id : Annotated[StrictStr, Field(..., description="Registry ID")], device_id : Annotated[StrictStr, Field(..., description="Device ID")], **kwargs) -> object:  # noqa: E501
         """delete_device  # noqa: E501
 
         Delete a device under a registry  # noqa: E501
@@ -759,7 +759,7 @@ class DeviceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: Info
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.delete_device_with_http_info(subscription_id, registry_id, device_id, **kwargs)  # noqa: E501
@@ -802,7 +802,7 @@ class DeviceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(Info, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -866,7 +866,7 @@ class DeviceApi(object):
         _auth_settings = ['apiKey', 'bearerAuth']  # noqa: E501
 
         _response_types_map = {
-            '200': "Info",
+            '200': "object",
             '400': "GenericErrorResponse",
             '404': "GenericErrorResponse",
             '500': "GenericErrorResponse",

@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_device**
-> Info delete_device(subscription_id, registry_id, device_id)
+> object delete_device(subscription_id, registry_id, device_id)
 
 
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Info**](Info.md)
+**object**
 
 ### Authorization
 

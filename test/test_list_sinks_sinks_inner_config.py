@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import OmniCore
-from OmniCore.models.device_credential import DeviceCredential  # noqa: E501
+from OmniCore.models.list_sinks_sinks_inner_config import ListSinksSinksInnerConfig  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestDeviceCredential(unittest.TestCase):
-    """DeviceCredential unit test stubs"""
+class TestListSinksSinksInnerConfig(unittest.TestCase):
+    """ListSinksSinksInnerConfig unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,28 +30,24 @@ class TestDeviceCredential(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test DeviceCredential
+        """Test ListSinksSinksInnerConfig
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DeviceCredential`
+        # uncomment below to create an instance of `ListSinksSinksInnerConfig`
         """
-        model = OmniCore.models.device_credential.DeviceCredential()  # noqa: E501
+        model = OmniCore.models.list_sinks_sinks_inner_config.ListSinksSinksInnerConfig()  # noqa: E501
         if include_optional :
-            return DeviceCredential(
-                expiration_time = '', 
-                id = '', 
-                public_key = OmniCore.models.public_key_credential.PublicKeyCredential(
-                    format = 'RSA_PEM', 
-                    key = '', )
+            return ListSinksSinksInnerConfig(
+                connection_parameter = ''
             )
         else :
-            return DeviceCredential(
+            return ListSinksSinksInnerConfig(
         )
         """
 
-    def testDeviceCredential(self):
-        """Test DeviceCredential"""
+    def testListSinksSinksInnerConfig(self):
+        """Test ListSinksSinksInnerConfig"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
