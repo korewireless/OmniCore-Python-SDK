@@ -1,27 +1,27 @@
-# ListSinks
+# Config
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sinks** | [**List[Sink]**](Sink.md) |  | [optional] 
+**connection_parameter** | **str** |  | [optional] 
 
 ## Example
 
 ```python
-from OmniCore.models.list_sinks import ListSinks
+from OmniCore.models.config import Config
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of ListSinks from a JSON string
-list_sinks_instance = ListSinks.from_json(json)
+# create an instance of Config from a JSON string
+config_instance = Config.from_json(json)
 # print the JSON string representation of the object
-print ListSinks.to_json()
+print Config.to_json()
 
 # convert the object into a dict
-list_sinks_dict = list_sinks_instance.to_dict()
-# create an instance of ListSinks from a dict
-list_sinks_form_dict = list_sinks.from_dict(list_sinks_dict)
+config_dict = config_instance.to_dict()
+# create an instance of Config from a dict
+config_form_dict = config.from_dict(config_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

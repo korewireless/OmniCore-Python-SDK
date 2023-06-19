@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import OmniCore
-from OmniCore.models.bind_request import BindRequest  # noqa: E501
+from OmniCore.models.config import Config  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestBindRequest(unittest.TestCase):
-    """BindRequest unit test stubs"""
+class TestConfig(unittest.TestCase):
+    """Config unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,27 +30,24 @@ class TestBindRequest(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test BindRequest
+        """Test Config
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `BindRequest`
+        # uncomment below to create an instance of `Config`
         """
-        model = OmniCore.models.bind_request.BindRequest()  # noqa: E501
+        model = OmniCore.models.config.Config()  # noqa: E501
         if include_optional :
-            return BindRequest(
-                device_id = '', 
-                gateway_id = ''
+            return Config(
+                connection_parameter = ''
             )
         else :
-            return BindRequest(
-                device_id = '',
-                gateway_id = '',
+            return Config(
         )
         """
 
-    def testBindRequest(self):
-        """Test BindRequest"""
+    def testConfig(self):
+        """Test Config"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
