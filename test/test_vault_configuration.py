@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import OmniCore
-from OmniCore.models.configurations import Configurations  # noqa: E501
+from OmniCore.models.vault_configuration import VaultConfiguration  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestConfigurations(unittest.TestCase):
-    """Configurations unit test stubs"""
+class TestVaultConfiguration(unittest.TestCase):
+    """VaultConfiguration unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,30 +30,27 @@ class TestConfigurations(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test Configurations
+        """Test VaultConfiguration
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `Configurations`
+        # uncomment below to create an instance of `VaultConfiguration`
         """
-        model = OmniCore.models.configurations.Configurations()  # noqa: E501
+        model = OmniCore.models.vault_configuration.VaultConfiguration()  # noqa: E501
         if include_optional :
-            return Configurations(
-                details = [
-                    OmniCore.models.vault_configuration.VaultConfiguration(
-                        id = 56, 
-                        subscription = '', 
-                        type = '', 
-                        data = '', )
-                    ]
+            return VaultConfiguration(
+                id = 56, 
+                subscription = '', 
+                type = '', 
+                data = ''
             )
         else :
-            return Configurations(
+            return VaultConfiguration(
         )
         """
 
-    def testConfigurations(self):
-        """Test Configurations"""
+    def testVaultConfiguration(self):
+        """Test VaultConfiguration"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

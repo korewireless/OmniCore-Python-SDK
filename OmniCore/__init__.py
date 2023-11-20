@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.8.2"
+__version__ = "1.8.3"
 
 # import apis into sdk package
 from OmniCore.api.device_api import DeviceApi
@@ -40,7 +40,6 @@ from OmniCore.models.bind_request import BindRequest
 from OmniCore.models.bind_request_ids_gateway import BindRequestIdsGateway
 from OmniCore.models.block_communication_body import BlockCommunicationBody
 from OmniCore.models.config import Config
-from OmniCore.models.configuration import Configuration
 from OmniCore.models.configurations import Configurations
 from OmniCore.models.create_configuration import CreateConfiguration
 from OmniCore.models.custom_onboard import CustomOnboard
@@ -91,6 +90,7 @@ from OmniCore.models.replay import Replay
 from OmniCore.models.replay_body import ReplayBody
 from OmniCore.models.sink import Sink
 from OmniCore.models.start_export_body import StartExportBody
+from OmniCore.models.vault_configuration import VaultConfiguration
 from OmniCore.models.vault_status import VaultStatus
 from OmniCore.models.vault_status_details import VaultStatusDetails
 from OmniCore.models.x509_certificate_details import X509CertificateDetails

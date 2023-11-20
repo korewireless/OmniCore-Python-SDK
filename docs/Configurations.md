@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**details** | [**List[Configuration]**](Configuration.md) |  | [optional] 
+**details** | [**List[VaultConfiguration]**](VaultConfiguration.md) |  | [optional] 
 
 ## Example
 
