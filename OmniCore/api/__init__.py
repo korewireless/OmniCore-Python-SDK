@@ -7,3 +7,4 @@ from OmniCore.api.device_api import DeviceApi
 from OmniCore.api.metrics_api import MetricsApi
 from OmniCore.api.registry_api import RegistryApi
 from OmniCore.api.sink_api import SinkApi
+from OmniCore.api.vault_api import VaultApi

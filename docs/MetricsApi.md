@@ -1,10 +1,10 @@
 # OmniCore.MetricsApi
 
-All URIs are relative to *https://api.korewireless.com/omnicore*
+All URIs are relative to *https://api.korewireless.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_metrics**](MetricsApi.md#get_metrics) | **GET** /subscriptions/{subscriptionId}/metrics | 
+[**get_metrics**](MetricsApi.md#get_metrics) | **GET** /omnicore/subscriptions/{subscriptionId}/metrics | 
 
 
 # **get_metrics**
@@ -24,10 +24,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
+# Defining the host is optional and defaults to https://api.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.korewireless.com/omnicore"
+    host = "https://api.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -68,10 +68,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
+# Defining the host is optional and defaults to https://api.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.korewireless.com/omnicore"
+    host = "https://api.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
