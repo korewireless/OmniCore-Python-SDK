@@ -5,14 +5,16 @@ All URIs are relative to *https://api.korewireless.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_vault_configuration**](VaultApi.md#create_vault_configuration) | **POST** /vault/subscriptions/{subscriptionid}/configurations | 
+[**create_vault_key**](VaultApi.md#create_vault_key) | **POST** /vault/subscriptions/{subscriptionid}/encryptionkeys | 
 [**delete_configuration**](VaultApi.md#delete_configuration) | **DELETE** /vault/subscriptions/{subscriptionid}/configurations/{configid} | 
-[**enable_vault**](VaultApi.md#enable_vault) | **POST** /vault/subscriptions/{subscriptionid}/enable-vault | 
+[**delete_vault_key**](VaultApi.md#delete_vault_key) | **DELETE** /vault/subscriptions/{subscriptionid}/encryptionkeys/{keyid} | 
 [**get_exports**](VaultApi.md#get_exports) | **GET** /vault/subscriptions/{subscriptionid}/exports | 
 [**get_registry_data**](VaultApi.md#get_registry_data) | **GET** /vault/subscriptions/{subscriptionid}/folders | 
 [**get_replays**](VaultApi.md#get_replays) | **GET** /vault/subscriptions/{subscriptionid}/replays | 
 [**get_vault_audit**](VaultApi.md#get_vault_audit) | **GET** /vault/subscriptions/{subscriptionid}/audit | 
 [**get_vault_configurations**](VaultApi.md#get_vault_configurations) | **GET** /vault/subscriptions/{subscriptionid}/configurations | 
 [**get_vault_files**](VaultApi.md#get_vault_files) | **GET** /vault/subscriptions/{subscriptionid}/registry/{registryid}/files | 
+[**get_vault_keys**](VaultApi.md#get_vault_keys) | **GET** /vault/subscriptions/{subscriptionid}/encryptionkeys | 
 [**get_vault_metrics**](VaultApi.md#get_vault_metrics) | **GET** /vault/subscriptions/{subscriptionid}/metrics | 
 [**get_vault_status**](VaultApi.md#get_vault_status) | **GET** /vault/subscriptions/{subscriptionid}/status | 
 [**start_export**](VaultApi.md#start_export) | **POST** /vault/subscriptions/{subscriptionid}/exports | 
@@ -148,6 +150,135 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_vault_key**
+> Frame create_vault_key(subscriptionid, create_vault_key_body=create_vault_key_body)
+
+
+
+Create Vault Key
+
+### Example
+
+* Api Key Authentication (apiKey):
+```python
+from __future__ import print_function
+import time
+import os
+import OmniCore
+from OmniCore.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.korewireless.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = OmniCore.Configuration(
+    host = "https://api.korewireless.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = OmniCore.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with OmniCore.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = OmniCore.VaultApi(api_client)
+    subscriptionid = 'subscriptionid_example' # str | Subscription ID
+    create_vault_key_body = OmniCore.CreateVaultKeyBody() # CreateVaultKeyBody | application/json (optional)
+
+    try:
+        api_response = api_instance.create_vault_key(subscriptionid, create_vault_key_body=create_vault_key_body)
+        print("The response of VaultApi->create_vault_key:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VaultApi->create_vault_key: %s\n" % e)
+```
+
+* Bearer (JWT) Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import os
+import OmniCore
+from OmniCore.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.korewireless.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = OmniCore.Configuration(
+    host = "https://api.korewireless.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = OmniCore.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with OmniCore.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = OmniCore.VaultApi(api_client)
+    subscriptionid = 'subscriptionid_example' # str | Subscription ID
+    create_vault_key_body = OmniCore.CreateVaultKeyBody() # CreateVaultKeyBody | application/json (optional)
+
+    try:
+        api_response = api_instance.create_vault_key(subscriptionid, create_vault_key_body=create_vault_key_body)
+        print("The response of VaultApi->create_vault_key:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VaultApi->create_vault_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionid** | **str**| Subscription ID | 
+ **create_vault_key_body** | [**CreateVaultKeyBody**](CreateVaultKeyBody.md)| application/json | [optional] 
+
+### Return type
+
+[**Frame**](Frame.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_configuration**
 > Frame delete_configuration(subscriptionid, configid)
 
@@ -277,12 +408,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **enable_vault**
-> Details enable_vault(subscriptionid, enable_vault=enable_vault)
+# **delete_vault_key**
+> Frame delete_vault_key(subscriptionid, keyid)
 
 
 
-Enable/Disable vault for a subscription
+Delete Vault Key
 
 ### Example
 
@@ -321,14 +452,14 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.VaultApi(api_client)
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
-    enable_vault = OmniCore.EnableVault() # EnableVault | application/json (optional)
+    keyid = 'keyid_example' # str | key id
 
     try:
-        api_response = api_instance.enable_vault(subscriptionid, enable_vault=enable_vault)
-        print("The response of VaultApi->enable_vault:\n")
+        api_response = api_instance.delete_vault_key(subscriptionid, keyid)
+        print("The response of VaultApi->delete_vault_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VaultApi->enable_vault: %s\n" % e)
+        print("Exception when calling VaultApi->delete_vault_key: %s\n" % e)
 ```
 
 * Bearer (JWT) Authentication (bearerAuth):
@@ -366,14 +497,14 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.VaultApi(api_client)
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
-    enable_vault = OmniCore.EnableVault() # EnableVault | application/json (optional)
+    keyid = 'keyid_example' # str | key id
 
     try:
-        api_response = api_instance.enable_vault(subscriptionid, enable_vault=enable_vault)
-        print("The response of VaultApi->enable_vault:\n")
+        api_response = api_instance.delete_vault_key(subscriptionid, keyid)
+        print("The response of VaultApi->delete_vault_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VaultApi->enable_vault: %s\n" % e)
+        print("Exception when calling VaultApi->delete_vault_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -381,11 +512,11 @@ with OmniCore.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionid** | **str**| Subscription ID | 
- **enable_vault** | [**EnableVault**](EnableVault.md)| application/json | [optional] 
+ **keyid** | **str**| key id | 
 
 ### Return type
 
-[**Details**](Details.md)
+[**Frame**](Frame.md)
 
 ### Authorization
 
@@ -393,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1154,6 +1285,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FileDetails**](FileDetails.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_vault_keys**
+> GetKeysResponse get_vault_keys(subscriptionid)
+
+
+
+Get Vault Keys
+
+### Example
+
+* Api Key Authentication (apiKey):
+```python
+from __future__ import print_function
+import time
+import os
+import OmniCore
+from OmniCore.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.korewireless.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = OmniCore.Configuration(
+    host = "https://api.korewireless.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = OmniCore.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with OmniCore.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = OmniCore.VaultApi(api_client)
+    subscriptionid = 'subscriptionid_example' # str | Subscription ID
+
+    try:
+        api_response = api_instance.get_vault_keys(subscriptionid)
+        print("The response of VaultApi->get_vault_keys:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VaultApi->get_vault_keys: %s\n" % e)
+```
+
+* Bearer (JWT) Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import os
+import OmniCore
+from OmniCore.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.korewireless.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = OmniCore.Configuration(
+    host = "https://api.korewireless.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = OmniCore.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with OmniCore.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = OmniCore.VaultApi(api_client)
+    subscriptionid = 'subscriptionid_example' # str | Subscription ID
+
+    try:
+        api_response = api_instance.get_vault_keys(subscriptionid)
+        print("The response of VaultApi->get_vault_keys:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VaultApi->get_vault_keys: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionid** | **str**| Subscription ID | 
+
+### Return type
+
+[**GetKeysResponse**](GetKeysResponse.md)
 
 ### Authorization
 
