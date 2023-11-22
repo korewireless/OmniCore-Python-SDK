@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**List[MetricsLogs]**](MetricsLogs.md) |  | [optional] 
-**total_exports** | **int** |  | [optional] 
-**total_replays** | **int** |  | [optional] 
+**total_export_size** | **float** |  | [optional] 
+**total_replay_size** | **float** |  | [optional] 
 
 ## Example
 

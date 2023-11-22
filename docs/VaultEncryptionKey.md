@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subscription** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**id** | **str** |  | [optional] 
+**id** | **int** |  | [optional] 
 **key** | **str** |  | [optional] 
 
 ## Example

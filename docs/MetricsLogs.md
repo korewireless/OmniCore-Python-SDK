@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **file_size** | **float** |  | [optional] 
 **noofoperations** | **int** |  | [optional] 
 **updatedon** | **str** |  | [optional] 
-**no_of_replays** | **int** |  | [optional] 
-**no_of_exports** | **int** |  | [optional] 
+**replay_file_size** | **float** |  | [optional] 
+**export_file_size** | **float** |  | [optional] 
 
 ## Example
 
