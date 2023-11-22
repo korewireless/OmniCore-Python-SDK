@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **no_of_files** | **int** |  | [optional] 
 **file_size** | **float** |  | [optional] 
 **noofoperations** | **int** |  | [optional] 
+**no_of_replays** | **float** |  | [optional] 
+**no_of_exports** | **float** |  | [optional] 
 **operations** | [**List[OperationMetrics]**](OperationMetrics.md) |  | [optional] 
-**details_for_time_period** | [**List[MetricsData]**](MetricsData.md) |  | [optional] 
+**details_for_time_period** | [**MetricsData**](MetricsData.md) |  | [optional] 
 
 ## Example
 

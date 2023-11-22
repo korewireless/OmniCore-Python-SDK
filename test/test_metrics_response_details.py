@@ -43,6 +43,8 @@ class TestMetricsResponseDetails(unittest.TestCase):
                 no_of_files = 56, 
                 file_size = 1.337, 
                 noofoperations = 56, 
+                no_of_replays = 1.337, 
+                no_of_exports = 1.337, 
                 operations = [
                     OmniCore.models.operation_metrics.OperationMetrics(
                         no_of_files = 56, 
@@ -52,20 +54,18 @@ class TestMetricsResponseDetails(unittest.TestCase):
                         updatedon = '', 
                         registryid = '', )
                     ], 
-                details_for_time_period = [
-                    OmniCore.models.metrics_data.MetricsData(
-                        data = [
-                            OmniCore.models.metrics_logs.MetricsLogs(
-                                no_of_files = 56, 
-                                file_size = 1.337, 
-                                noofoperations = 56, 
-                                updatedon = '', 
-                                no_of_replays = 56, 
-                                no_of_exports = 56, )
-                            ], 
-                        total_exports = 56, 
-                        total_replays = 56, )
-                    ]
+                details_for_time_period = OmniCore.models.metrics_data.MetricsData(
+                    data = [
+                        OmniCore.models.metrics_logs.MetricsLogs(
+                            no_of_files = 56, 
+                            file_size = 1.337, 
+                            noofoperations = 56, 
+                            updatedon = '', 
+                            no_of_replays = 56, 
+                            no_of_exports = 56, )
+                        ], 
+                    total_exports = 56, 
+                    total_replays = 56, )
             )
         else :
             return MetricsResponseDetails(

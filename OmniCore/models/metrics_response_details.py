@@ -33,9 +33,11 @@ class MetricsResponseDetails(BaseModel):
     no_of_files: Optional[StrictInt] = Field(None, alias="noOfFiles")
     file_size: Optional[StrictFloat] = Field(None, alias="fileSize")
     noofoperations: Optional[StrictInt] = None
+    no_of_replays: Optional[StrictFloat] = Field(None, alias="noOfReplays")
+    no_of_exports: Optional[StrictFloat] = Field(None, alias="noOfExports")
     operations: Optional[List[OperationMetrics]] = Field(None, alias="Operations")
-    details_for_time_period: Optional[List[MetricsData]] = Field(None, alias="detailsForTimePeriod")
-    __properties = ["subscriptionId", "noOfFiles", "fileSize", "noofoperations", "Operations", "detailsForTimePeriod"]
+    details_for_time_period: Optional[MetricsData] = Field(None, alias="detailsForTimePeriod")
+    __properties = ["subscriptionId", "noOfFiles", "fileSize", "noofoperations", "noOfReplays", "noOfExports", "Operations", "detailsForTimePeriod"]
 
     class Config:
         allow_population_by_field_name = True
@@ -67,13 +69,9 @@ class MetricsResponseDetails(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['Operations'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in details_for_time_period (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of details_for_time_period
         if self.details_for_time_period:
-            for _item in self.details_for_time_period:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['detailsForTimePeriod'] = _items
+            _dict['detailsForTimePeriod'] = self.details_for_time_period.to_dict()
         return _dict
 
     @classmethod
@@ -90,8 +88,10 @@ class MetricsResponseDetails(BaseModel):
             "no_of_files": obj.get("noOfFiles"),
             "file_size": obj.get("fileSize"),
             "noofoperations": obj.get("noofoperations"),
+            "no_of_replays": obj.get("noOfReplays"),
+            "no_of_exports": obj.get("noOfExports"),
             "operations": [OperationMetrics.from_dict(_item) for _item in obj.get("Operations")] if obj.get("Operations") is not None else None,
-            "details_for_time_period": [MetricsData.from_dict(_item) for _item in obj.get("detailsForTimePeriod")] if obj.get("detailsForTimePeriod") is not None else None
+            "details_for_time_period": MetricsData.from_dict(obj.get("detailsForTimePeriod")) if obj.get("detailsForTimePeriod") is not None else None
         })
         return _obj
 
