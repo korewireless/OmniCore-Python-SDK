@@ -2,8 +2,8 @@
 This is an OmniCore Model and State Management server.
 
 
-- API version: 1.8.4
-- Package version: 1.8.4
+- API version: 1.8.5
+- Package version: 1.8.5
 - Build package: org.openapitools.codegen.languages.PythonNextgenClientCodegen
 For more information, please visit [http://www.korewireless.com](http://www.korewireless.com)
 
