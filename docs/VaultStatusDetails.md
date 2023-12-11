@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **updatedon** | **str** |  | [optional] 
 **created_on** | **str** |  | [optional] 
 **mqtt_id** | **str** |  | [optional] 
+**retention_period** | **int** |  | [optional] 
+**encryption_key_id** | **int** |  | [optional] 
+**is_encrypted** | **bool** |  | [optional] 
 
 ## Example
 

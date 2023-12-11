@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import OmniCore
-from OmniCore.models.error_frame import ErrorFrame  # noqa: E501
+from OmniCore.models.enable_encryption_body import EnableEncryptionBody  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestErrorFrame(unittest.TestCase):
-    """ErrorFrame unit test stubs"""
+class TestEnableEncryptionBody(unittest.TestCase):
+    """EnableEncryptionBody unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,31 +30,26 @@ class TestErrorFrame(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test ErrorFrame
+        """Test EnableEncryptionBody
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ErrorFrame`
+        # uncomment below to create an instance of `EnableEncryptionBody`
         """
-        model = OmniCore.models.error_frame.ErrorFrame()  # noqa: E501
+        model = OmniCore.models.enable_encryption_body.EnableEncryptionBody()  # noqa: E501
         if include_optional :
-            return ErrorFrame(
-                code = 56, 
-                details = '', 
-                message = '', 
-                status = ''
+            return EnableEncryptionBody(
+                action = '', 
+                is_encrypted = True, 
+                encryption_key_id = 56
             )
         else :
-            return ErrorFrame(
-                code = 56,
-                details = '',
-                message = '',
-                status = '',
+            return EnableEncryptionBody(
         )
         """
 
-    def testErrorFrame(self):
-        """Test ErrorFrame"""
+    def testEnableEncryptionBody(self):
+        """Test EnableEncryptionBody"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
