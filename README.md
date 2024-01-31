@@ -2,8 +2,8 @@
 This is an OmniCore Model and State Management server.
 
 
-- API version: 1.8.7
-- Package version: 1.8.7
+- API version: 1.8.9
+- Package version: 1.8.9
 - Build package: org.openapitools.codegen.languages.PythonNextgenClientCodegen
 For more information, please visit [http://www.korewireless.com](http://www.korewireless.com)
 
@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**get_device**](docs/DeviceApi.md#get_device) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 *DeviceApi* | [**get_devices**](docs/DeviceApi.md#get_devices) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
 *DeviceApi* | [**get_states**](docs/DeviceApi.md#get_states) | **GET** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
+*DeviceApi* | [**get_subscription_devices**](docs/DeviceApi.md#get_subscription_devices) | **GET** /omnicore/subscriptions/{subscriptionId}/devices | 
 *DeviceApi* | [**send_command_to_device**](docs/DeviceApi.md#send_command_to_device) | **POST** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
 *DeviceApi* | [**un_bind_device**](docs/DeviceApi.md#un_bind_device) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
 *DeviceApi* | [**un_bind_devices**](docs/DeviceApi.md#un_bind_devices) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
