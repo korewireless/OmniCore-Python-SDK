@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import OmniCore
-from OmniCore.models.audit_result import AuditResult  # noqa: E501
+from OmniCore.models.device_online import DeviceOnline  # noqa: E501
 from OmniCore.rest import ApiException
 
-class TestAuditResult(unittest.TestCase):
-    """AuditResult unit test stubs"""
+class TestDeviceOnline(unittest.TestCase):
+    """DeviceOnline unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,33 +30,29 @@ class TestAuditResult(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test AuditResult
+        """Test DeviceOnline
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AuditResult`
+        # uncomment below to create an instance of `DeviceOnline`
         """
-        model = OmniCore.models.audit_result.AuditResult()  # noqa: E501
+        model = OmniCore.models.device_online.DeviceOnline()  # noqa: E501
         if include_optional :
-            return AuditResult(
-                audit = [
-                    OmniCore.models.audit.Audit(
-                        subscription_id = '', 
-                        operation = '', 
-                        actor = '', 
-                        updatedon = '', )
-                    ], 
-                total_count = 56, 
-                page_number = 56, 
-                page_size = 56
+            return DeviceOnline(
+                id = '012', 
+                registry = '', 
+                client_online = True, 
+                last_heartbeat_time = '', 
+                subscription = ''
             )
         else :
-            return AuditResult(
+            return DeviceOnline(
+                id = '012',
         )
         """
 
-    def testAuditResult(self):
-        """Test AuditResult"""
+    def testDeviceOnline(self):
+        """Test DeviceOnline"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

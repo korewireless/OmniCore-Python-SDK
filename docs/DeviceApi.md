@@ -1241,7 +1241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_subscription_devices**
-> ListDevicesResponse get_subscription_devices(subscription_id, page_number=page_number, page_size=page_size, field_mask=field_mask, sort_by_client_online=sort_by_client_online, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
+> ListDevicesOnlineResponse get_subscription_devices(subscription_id, page_number=page_number, page_size=page_size, field_mask=field_mask, sort_by_client_online=sort_by_client_online, device_ids=device_ids, device_num_ids=device_num_ids, gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
 
 
 
@@ -1372,7 +1372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListDevicesResponse**](ListDevicesResponse.md)
+[**ListDevicesOnlineResponse**](ListDevicesOnlineResponse.md)
 
 ### Authorization
 

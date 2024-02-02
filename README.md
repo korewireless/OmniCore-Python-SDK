@@ -2,8 +2,8 @@
 This is an OmniCore Model and State Management server.
 
 
-- API version: 1.8.9
-- Package version: 1.8.9
+- API version: 1.8.10
+- Package version: 1.8.10
 - Build package: org.openapitools.codegen.languages.PythonNextgenClientCodegen
 For more information, please visit [http://www.korewireless.com](http://www.korewireless.com)
 
@@ -161,6 +161,7 @@ Class | Method | HTTP request | Description
  - [DeviceConfig](docs/DeviceConfig.md)
  - [DeviceConfiguration](docs/DeviceConfiguration.md)
  - [DeviceCredential](docs/DeviceCredential.md)
+ - [DeviceOnline](docs/DeviceOnline.md)
  - [DeviceRegistry](docs/DeviceRegistry.md)
  - [DeviceState](docs/DeviceState.md)
  - [EnableEncryptionBody](docs/EnableEncryptionBody.md)
@@ -183,6 +184,7 @@ Class | Method | HTTP request | Description
  - [ListDeviceConfigVersionsResponse](docs/ListDeviceConfigVersionsResponse.md)
  - [ListDeviceRegistries](docs/ListDeviceRegistries.md)
  - [ListDeviceStatesResponse](docs/ListDeviceStatesResponse.md)
+ - [ListDevicesOnlineResponse](docs/ListDevicesOnlineResponse.md)
  - [ListDevicesResponse](docs/ListDevicesResponse.md)
  - [ListSinks](docs/ListSinks.md)
  - [LogLevel](docs/LogLevel.md)
